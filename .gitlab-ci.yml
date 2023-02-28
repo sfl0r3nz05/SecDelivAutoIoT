@@ -8,14 +8,14 @@ security-check:
    name: aquasec/trivy:latest
    entrypoint: [""] 
   tags:
-    - remedy
+    - only_nondago
   script:
   - trivy fs .
 
 build:
   stage: build
   tags:
-    - remedy
+    - only_nondago
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
