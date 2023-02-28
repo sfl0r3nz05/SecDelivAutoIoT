@@ -1,21 +1,23 @@
-name: ci
-
-on:
-  push:
-    branches:
-      - "master"
-
-env:
-  TEST_TAG: sflorenz05/app:test
-  LATEST_TAG: user/app:latest
+name: CI
+run-name: ${{ github.actor }} to CI
+on: [push]
 
 jobs:
-  build-ci-cd:
-    name: Build-CI-CD
+  build-app-ci-cd:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dockerfile: ./Dockerfile
+            image: sflorenz05/app-ci-cd
+            context: ./
+    permissions:
+      contents: read
+      packages: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Log in to the Container registry
@@ -24,10 +26,28 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v4
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
         with:
-          context: ./
-          file: ./Dockerfile
+          images: ${{ matrix.image }}
+
+      - name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: sflorenz05/publisher-agent
+          tag-custom: latest
+          tag-semver: |
+            {{raw}}
+
+      - name: Build and push Docker Agent image
+        env:
+          CI: false
+        uses: docker/build-push-action@v3
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.dockerfile }}
           push: true
-          tags: ${{ env.LATEST_TAG }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
