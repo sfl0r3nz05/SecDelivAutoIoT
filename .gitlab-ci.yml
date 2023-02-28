@@ -8,14 +8,14 @@ security-check:
    name: aquasec/trivy:latest
    entrypoint: [""] 
   tags:
-    - dserver
+    - remedy
   script:
   - trivy fs .
 
 build:
   stage: build
   tags:
-    - dserver
+    - remedy
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
