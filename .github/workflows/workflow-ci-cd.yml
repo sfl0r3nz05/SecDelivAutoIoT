@@ -6,9 +6,6 @@ jobs:
   build-ci-cd:
     name: Build-CI-CD
     runs-on: ubuntu-latest
-      permissions:
-        contents: read
-        packages: write
 
     steps:
 
