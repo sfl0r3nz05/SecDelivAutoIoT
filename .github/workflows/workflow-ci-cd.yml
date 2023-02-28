@@ -7,8 +7,8 @@ on:
 
 jobs:
 
-  build:
-    name: Build
+  security-verification:
+    name: Security Check
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
@@ -26,7 +26,7 @@ jobs:
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
 
-  docker:
+  release:
     runs-on: ubuntu-latest
     steps:
       -
