@@ -6,7 +6,7 @@ on:
       - "master"
 
 env:
-  TEST_TAG: user/app:test
+  TEST_TAG: sflorenz05/app:test
   LATEST_TAG: user/app:latest
 
 jobs:
@@ -18,9 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
@@ -30,6 +27,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./
+          file: ./Dockerfile
           push: true
           tags: ${{ env.LATEST_TAG }}
