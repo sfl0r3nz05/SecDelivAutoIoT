@@ -2,20 +2,20 @@ stages:
   - check
   - build
 
-check:
+security-check:
   stage: check
   image:
    name: aquasec/trivy:latest
    entrypoint: [""] 
   tags:
-    - only_nondago
+    - dserver
   script:
   - trivy fs .
 
 build:
   stage: build
   tags:
-    - only_nondago
+    - dserver
   image:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
