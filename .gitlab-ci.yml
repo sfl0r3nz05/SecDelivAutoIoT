@@ -12,7 +12,7 @@ security-check:
   script:
   - trivy fs .
 
-build:
+release:
   stage: build
   tags:
     - only_nondago
