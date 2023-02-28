@@ -11,7 +11,6 @@ jobs:
        name: Build & push Docker image
        with:
         image: sflorenz05/app-ci-cd
-        context: ./
         tags: v1, latest
         registry: index.docker.io
         dockerfile: Dockerfile
