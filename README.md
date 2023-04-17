@@ -1,6 +1,6 @@
-# Simple repository to demonstrate CI/CD in GitHub/GitLab
+# Secure delivery automation over monitored IoT infrastructures
 
-- This repository is under development by [@sfl0r3nz05](sfigueroa@ceit.es).
+- This repository is under development by [@mikel-m](mikelmorillo98@gmail.com) and [@sfl0r3nz05](sfigueroa@ceit.es).
 
 ![image](https://user-images.githubusercontent.com/6643905/221798180-3fbb2e2d-5d3c-45d5-b670-da783c05b06f.png)
 
