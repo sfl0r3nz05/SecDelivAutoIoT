@@ -9,7 +9,7 @@ El concepto de flujo se mantiene igual que en otras herramientas de integración
 - Almacenamiento: se almacena el artefacto en un Repositorio de Artefactos.
 - Despliegue: se actualiza la versión de los servidores a la nueva versión construida.
 
-![Flujo de CI-CD por Drone](docs/images/Flujo de CI-CD por Drone.jpg)
+![Flujo de CI-CD por Drone](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Flujo%20de%20CI-CD%20por%20Drone.jpg "Flujo de CI-CD por Drone")
 
 Sin pretender haber implementado a conformidad Continuous Integration, Continuous Delivery y Continuous Deployment, podemos decir que con este flujo estamos cumpliendo grandes prácticas de DevOps: las pruebas son el epicentro del Continuous Integration, el Repositorio de Artefactos se convierte en el centro del Continuous Delivery, y el despliegue de estos nuevos artefactos es el núcleo del Continuous Delivery.
 
