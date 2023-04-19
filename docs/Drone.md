@@ -9,6 +9,8 @@ El concepto de flujo se mantiene igual que en otras herramientas de integración
 - Almacenamiento: se almacena el artefacto en un Repositorio de Artefactos.
 - Despliegue: se actualiza la versión de los servidores a la nueva versión construida.
 
+![Flujo de CI-CD por Drone](docs/images/Flujo de CI-CD por Drone.jpg)
+
 Sin pretender haber implementado a conformidad Continuous Integration, Continuous Delivery y Continuous Deployment, podemos decir que con este flujo estamos cumpliendo grandes prácticas de DevOps: las pruebas son el epicentro del Continuous Integration, el Repositorio de Artefactos se convierte en el centro del Continuous Delivery, y el despliegue de estos nuevos artefactos es el núcleo del Continuous Delivery.
 
 El concepto más importante de Drone es que cada paso de flujo se ejecuta en un contenedor con un volumen compartido donde se almacena el código fuente, lo cual nos brinda flexibilidad, portabilidad y ligereza, también reduce ampliamente los tiempos de configuración de la herramienta, pues no es necesario realizar configuraciones adicionales por tecnología o lenguaje de programación.
