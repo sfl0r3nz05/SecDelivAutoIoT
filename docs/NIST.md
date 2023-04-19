@@ -93,3 +93,36 @@ Las definiciones de Nivel son las siguientes:
 - Participación externa: La organización entiende su rol, sus dependencias y sus dependientes en el ecosistema más amplio y contribuye a una mayor comprensión de los riesgos por parte de la comunidad. Recibe, genera y revisa información priorizada que informa el análisis continuo de sus riesgos a medida que evolucionan los paisajes de amenazas y tecnología. La organización comparte esa información con otros colaboradores de forma interna y externa.
 
 ### 2.3 Perfil del Marco
+El Perfil del Marco (“Perfil”) es la alineación de las Funciones, Categorías y Subcategorías con los requisitos empresariales, la tolerancia al riesgo y los recursos de la organización. Un Perfil permite a las organizaciones establecer una hoja de ruta para reducir el riesgo de seguridad cibernética que está bien alineada con los objetivos organizacionales y sectoriales, considera los requisitos legales o reglamentarios y las mejores prácticas de la industria, y refleja las prioridades de gestión de riesgos.
+
+## 3.0 Cómo utilizar el Marco
+Una organización puede utilizar el Marco como una parte clave de su proceso sistemático para identificar, evaluar y administrar el riesgo de seguridad cibernética. El Marco no está diseñado para reemplazar los procesos existentes; una organización puede utilizar su proceso actual y superponerlo en el Marco para determinar las brechas y desarrollar una hoja de ruta hacia la mejora.
+
+El Marco está diseñado para completar las operaciones empresariales y de seguridad cibernética existentes. El Marco proporciona un medio para expresar los requisitos de seguridad cibernética a los socios empresariales y clientes, y puede ayudar a identificar las brechas en las prácticas de seguridad cibernética de una organización.
+
+### 3.1 Revisión básica de prácticas de seguridad cibernética
+El Marco puede ser utilizado para comparar las actividades de seguridad cibernética actuales de una organización con las delineadas en el Núcleo del Marco. Mediante la creación de un Perfil Actual, las organizaciones pueden examinar en qué medida están logrando los resultados descritos en las Categorías y Subcategorías principales, alineadas con las cinco Funciones de alto nivel: Identificar, Proteger, Detectar, Responder y Recuperar.
+
+### 3.2 Establecimiento o mejora de un programa de seguridad cibernética
+Los siguientes pasos ilustran cómo una organización podría utilizar el Marco para crear un nuevo programa de seguridad cibernética o mejorar un programa existente. Estos pasos deben repetirse según sea necesario para mejorar continuamente la seguridad cibernética.
+- **Paso 1: Priorización y Alcance**: la organización identifica sus objetivos empresariales o de misión y las prioridades organizacionales de alto nivel. Con esta información, la organización toma decisiones estratégicas con respecto a las implementaciones de seguridad cibernética y determina el alcance de los sistemas y activos que respaldan la línea o proceso comercial seleccionado.
+- **Paso 2: Orientación**: una vez que se ha determinado el alcance del programa de seguridad cibernética para la línea de negocio o el proceso, la organización identifica los sistemas y activos relacionados, los requisitos reglamentarios y el enfoque de riesgo general. La organización luego consulta las fuentes para identificar las amenazas y vulnerabilidades aplicables a esos sistemas y activos.
+- **Paso 3: Crear un Perfil Actual**: la organización desarrolla un Perfil Actual en que indica qué resultados de Categoría y Subcategoría del Núcleo del Marco se están logrando actualmente.
+- **Paso 4: Realizar una evaluación de riesgos**: la organización analiza el entorno operativo para discernir la probabilidad de un evento de seguridad cibernética y el impacto que el evento podría tener en la organización.
+- **Paso 5: Crear un Perfil Objetivo**: la organización crea un Perfil Objetivo que se centra en la evaluación de las Categorías y Subcategorías del Marco que describen los resultados deseados de seguridad cibernética de la organización.
+- **Paso 6: Determinar, analizar y priorizar brechas**: la organización compara el Perfil Actual y el Perfil Objetivo para determinar las brechas. A continuación, crea un plan de acción priorizado para abordar las brechas para lograr los resultados en el Perfil Objetivo.
+- **Paso 7: Implementar plan de acción**: la organización determina qué acciones tomar para abordar las brechas, si las hay, identificadas en el paso anterior y luego ajusta sus prácticas actuales de seguridad cibernética para lograr el Perfil Objetivo.
+
+Una organización repite los pasos según sea necesario para evaluar y mejorar continuamente su seguridad cibernética.
+
+## 4.0 Autoevaluación del riesgo de seguridad cibernética con el Marco
+El Marco de seguridad cibernética está diseñado para reducir el riesgo al mejorar la gestión del riesgo de seguridad cibernética para los objetivos de la organización. Idealmente, las organizaciones que usan el Marco podrán medir y asignar valores a su riesgo junto con el costo y los beneficios de los pasos tomados para reducir el riesgo a niveles aceptables. Con el tiempo, la autoevaluación y la medición deberían mejorar la toma de decisiones sobre prioridades de inversión.
+
+Si bien las mediciones de todos esos puntos están fuera del alcance del Marco, los resultados de seguridad cibernética del núcleo del Marco apoyan la autoevaluación de la eficacia de la inversión y las actividades de seguridad cibernética en las siguientes maneras:
+- Tomar decisiones sobre cómo las diferentes partes de la operación de seguridad cibernética deberían influir la selección de los Niveles de Implementación de objetivos.
+- Evaluar el enfoque de la organización para la gestión del riesgo de seguridad cibernética al determinar los Niveles de Implementación actuales.
+- Priorizar los resultados de seguridad cibernética mediante el desarrollo de Perfiles Objetivo.
+- Determinar el grado en que los pasos específicos de seguridad cibernética logran los resultados de seguridad cibernética deseados mediante la evaluación de Perfiles Actuales.
+- Medir el grado de implementación de los catálogos de controles o las guías técnicas enumeradas como referencias informativas.
+
+Las organizaciones deben ser reflexivas, creativas y cuidadosas con la forma en que emplean mediciones para optimizar el uso, al tiempo que evitan la dependencia en indicadores artificiales del estado actual y el progreso en la mejora de la gestión del riesgo de seguridad cibernética.
