@@ -1,5 +1,5 @@
 # NIST
-## [Guía de inicio rápido](https://www.nist.gov/cyberframework/getting-started/quick-start-guide)
+## Guía de inicio rápido
   Esta Guía de inicio rápido tiene como objetivo orientar a organizaciones que buscan mejorar la gestión de riesgos de ciberseguridad mediante la utilización del marco de ciberseguridad del NIST. Las organizaciones variarán en la forma en que personalizan las prácticas descritas. Las organizaciones pueden determinar las actividades que son importantes para la prestación de servicios críticos y pueden priorizar las inversiones para maximizar el impacto.
 
   El marco de ciberseguridad del NIST puede ayudar a una organización a comenzar o mejorar su programa de ciberseguridad. Construido a partir de prácticas que se sabe que son eficaces, puede ayudar a las organizaciones a mejorar su postura de ciberseguridad.
@@ -37,7 +37,7 @@
 - Asegúrese de que los planes de recuperación estén actualizados.
 - Gestionar las relaciones públicas y la reputación de la empresa.
 
-# [Marco para la mejora de la seguridad cibernética en infraestructuras críticas](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018es.pdf)
+# Marco para la mejora de la seguridad cibernética en infraestructuras críticas
 
 ## 1.0 Introducción al Marco
 ### 1.1 Descripción del Marco
@@ -128,3 +128,7 @@ Si bien las mediciones de todos esos puntos están fuera del alcance del Marco, 
 - Medir el grado de implementación de los catálogos de controles o las guías técnicas enumeradas como referencias informativas.
 
 Las organizaciones deben ser reflexivas, creativas y cuidadosas con la forma en que emplean mediciones para optimizar el uso, al tiempo que evitan la dependencia en indicadores artificiales del estado actual y el progreso en la mejora de la gestión del riesgo de seguridad cibernética.
+
+## Referencias
+- NIST: Quick Start Guide - [nist.gov](https://www.nist.gov/cyberframework/getting-started/quick-start-guide)
+- Marco para la mejora de la seguridad cibernética en infraestructuras críticas - [nvlpubs.nist.gov](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018es.pdf)
