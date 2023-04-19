@@ -7,32 +7,32 @@ El marco de ciberseguridad del NIST puede ayudar a una organización a comenzar 
 El marco está organizado por cinco funciones clave: identificar, proteger, detectar, responder y recuperar. Estos cinco términos ampliamente entendidos, cuando se consideran juntos, brindan una visión integral del ciclo de vida para administrar el riesgo de ciberseguridad a lo largo del tiempo.
 
 ### Identificar
--Identifique los procesos y activos críticos de la empresa.
--Documente los flujos de información.
--Mantenga un inventario de hardware y software.
--Establezca políticas de ciberseguridad que incluyan roles y responsabilidades.
--Identifique amenazas, vulnerabilidades y riesgos para los activos.
+- Identifique los procesos y activos críticos de la empresa.
+- Documente los flujos de información.
+- Mantenga un inventario de hardware y software.
+- Establezca políticas de ciberseguridad que incluyan roles y responsabilidades.
+- Identifique amenazas, vulnerabilidades y riesgos para los activos.
 
 ### Proteger
--Administre el acceso a los activos y la información.
--Proteja los datos confidenciales.
--Realice copias de seguridad periódicas.
--Proteja sus dispositivos.
--Administre las vulnerabilidades de los dispositivos.
--Capacitar a los usuarios.
+- Administre el acceso a los activos y la información.
+- Proteja los datos confidenciales.
+- Realice copias de seguridad periódicas.
+- Proteja sus dispositivos.
+- Administre las vulnerabilidades de los dispositivos.
+- Capacitar a los usuarios.
 
 ### Detectar
--Probar y actualizar procesos de detección.
--Mantener y monitorear registros.
--Conozca los flujos de datos esperados para su empresa.
--Comprenda el impacto de los eventos de ciberseguridad.
+- Probar y actualizar procesos de detección.
+- Mantener y monitorear registros.
+- Conozca los flujos de datos esperados para su empresa.
+- Comprenda el impacto de los eventos de ciberseguridad.
 
 ### Responder
--Asegúrese de que se prueben los planes de respuesta.
--Asegúrese de que los planes de respuesta estén actualizados.
--Coordine con las partes interesadas internas y externas.
+- Asegúrese de que se prueben los planes de respuesta.
+- Asegúrese de que los planes de respuesta estén actualizados.
+- Coordine con las partes interesadas internas y externas.
 
 ### Recuperar
--Comuníquese con las partes interesadas internas y externas.
--Asegúrese de que los planes de recuperación estén actualizados.
--Gestionar las relaciones públicas y la reputación de la empresa.
+- Comuníquese con las partes interesadas internas y externas.
+- Asegúrese de que los planes de recuperación estén actualizados.
+- Gestionar las relaciones públicas y la reputación de la empresa.
