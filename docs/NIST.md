@@ -1,5 +1,5 @@
 # NIST
-## Guía de inicio rápido
+## [Guía de inicio rápido](https://www.nist.gov/cyberframework/getting-started/quick-start-guide)
   Esta Guía de inicio rápido tiene como objetivo orientar a organizaciones que buscan mejorar la gestión de riesgos de ciberseguridad mediante la utilización del marco de ciberseguridad del NIST. Las organizaciones variarán en la forma en que personalizan las prácticas descritas. Las organizaciones pueden determinar las actividades que son importantes para la prestación de servicios críticos y pueden priorizar las inversiones para maximizar el impacto.
 
   El marco de ciberseguridad del NIST puede ayudar a una organización a comenzar o mejorar su programa de ciberseguridad. Construido a partir de prácticas que se sabe que son eficaces, puede ayudar a las organizaciones a mejorar su postura de ciberseguridad.
@@ -36,6 +36,8 @@
 - Comuníquese con las partes interesadas internas y externas.
 - Asegúrese de que los planes de recuperación estén actualizados.
 - Gestionar las relaciones públicas y la reputación de la empresa.
+
+# [Marco para la mejora de la seguridad cibernética en infraestructuras críticas](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018es.pdf)
 
 ## 1.0 Introducción al Marco
 ### 1.1 Descripción del Marco
