@@ -22,6 +22,15 @@ Conceptos más relevantes de Drone:
 4. **La ejecución condicional**: el paso de despliegue solo se utiliza cuando es llamado desde la rama env/production.
 5. **Los secretos**: información confidencial, como las credenciales de acceso al registry de docker y el acceso al cluster de kubernetes son ocultadas y manejadas por el manejador de secretos de drone.
 
+## Características de Drone
+- Open-source, desarrollado por una enorme comunidad.
+- Fácil de instalar y mantener.
+- Basado en Docker, todo corre en containers.
+- Integraciones nativas de Github, Gitlab, Bitbucket…
+- Adopta configuración basada en yaml, adoptando el principio de canalización como código.
+- Fácilmente escalable.
+- Incluye muchos plugins de trabajo mantenidos por la comunidad.
+
 ### Conclusiones
 Drone es una herramienta robusta para implementación de prácticas DevOps relacionadas con la integración contínua, el despliegue contínuo y la entrega contínua.
 
@@ -29,3 +38,4 @@ Al ser Container Native, Drone puede ejecutarse directamente como un servicio de
 
 ## Referencias
 - Drone.io como motor de CI/CD - [medium.com](https://medium.com/ingenier%C3%ADa-en-tranqui-finanzas/drone-io-como-motor-de-ci-cd-32a8d714320d)
+- Goodbye Jenkins: How Drone Simplifies CI/CD for Engineering Teams Everywhere - [boom.co](https://boom.co/blogs/drone-ci-for-engineering-teams/)
