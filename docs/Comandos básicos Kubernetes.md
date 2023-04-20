@@ -1,0 +1,14 @@
+# Comandos básicos Kubernetes
+- Lista de los nodos del cluster: `kubectl get nodes`
+- Lista de los servicios: `kubectl get service`
+- Lista de los pods: `kubectl get pods`
+- Lista de deployments: `kubectl get deployments`
+- Lista de namespaces: `kubectl get namespaces`
+- Lista de todo: `kubectl get all`
+- Eliminar servicio: `kubectl delete service hello-world`
+- Eliminar pod (por ejemplo, nginx): `kubectl delete pod nginx`
+- Eliminar deployment: `kubectl delete deployment hello-world`
+- Acceder al pod (por ejemplo, nginx): `kubectl exec -it nginx -- sh`
+- Crear un secret: `kubectl create secret generic mysql-pass --from-literal=password=password1234`
+- Aplicar el contenido del fichero deployment.yaml: `kubectl apply -f deployment.yaml`
+- Eliminar pod del fichero deployment.yaml: `kubectl delete -f deployment.yaml`
