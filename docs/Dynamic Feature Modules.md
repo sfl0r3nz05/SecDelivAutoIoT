@@ -11,7 +11,7 @@ Split APKs are very similar to regular APKs. However, the Android platform is ab
 - **Dynamic Feature APKs**: each of these APKs contains code and resources for a feature of your app that is not required when your app is first installed.
 
 ## What are Dynamic Feature Modules?
-Dynamic feature modules allow you to separate certain features and resources from the base module of your app and include them in your app bundle. Users can download and install these modules later on demand after they’ve already installed the base APK of the app using Dynamic Delivery.
+Dynamic Feature Modules allow you to separate certain features and resources from the base module of your app and include them in your app bundle. Users can download and install these modules later on demand after they’ve already installed the base APK of the app using Dynamic Delivery.
 
 ## Downloading dynamic feature modules
 With Google Play Core Library, your app can download dynamic feature modules on demand to devices running Android 5.0 (API level 21) and higher. You can also use this API to download on demand modules for your Android Instant Apps.
