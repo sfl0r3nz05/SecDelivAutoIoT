@@ -130,3 +130,12 @@ Para poder conectarse mediante SSH y para actualizar e instalar paquetes, hay qu
   Este comando te muestra el estado actual del servicio K3s.
 
 Con estos pasos, ya estaría instalado K3s en la Raspberry Pi y se podrá empezar a utilizar para desplegar las aplicaciones.
+
+## Referencias
+- NIST - [docs.google.com](https://docs.google.com/document/d/1iaeQo4RI6FsqoR_ak5dra9uTT4lBzNNG5_q1vTTV4FQ/edit?usp=sharing)
+- Path to GitOps - [docs.google.com](https://docs.google.com/document/d/1cQVQnBXhqUqchH6cduWlR-XAzE-J54NWOAIZiWnAUzI/edit?usp=sharing)
+- Comandos Kubernetes - [docs.google.com](https://docs.google.com/document/d/17oqf-fs8zGtcK8HAqN-noJb3ieDhng8IU2jVlHn4szk/edit?usp=sharing)
+- Dynamic Feature Modules - [docs.google.com](https://docs.google.com/document/d/1u63gvovECQCgJC11MDEmeK97YB2baPo4iMmVReCSDoY/edit?usp=sharing)
+- Drone - [docs.google.com](https://docs.google.com/document/d/1FBuLXEVjFFJTJMBXZCvo8goJtY7uiDihltpgQfIYWcA/edit?usp=sharing)
+- Herramientas para análisis de seguridad - [docs.google.com](https://docs.google.com/document/d/1k63yvoXLnqFfAu6gcZQnnGlKwYWnQsdRIm0FtNNzz5U/edit?usp=sharing)
+- Kubernetes tutorial - Install Kubernetes on Raspberry Pi fast in 2022 - [youtube.com](https://www.youtube.com/watch?v=rOXkutK8ANc&ab_channel=AndrewMalkov)
