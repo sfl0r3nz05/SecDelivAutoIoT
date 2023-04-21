@@ -31,7 +31,7 @@ Conceptos más relevantes de Drone:
 - Fácilmente escalable.
 - Incluye muchos plugins de trabajo mantenidos por la comunidad.
 
-### Conclusiones
+## Conclusiones
 Drone es una herramienta robusta para implementación de prácticas DevOps relacionadas con la integración contínua, el despliegue contínuo y la entrega contínua.
 
 Al ser Container Native, Drone puede ejecutarse directamente como un servicio dentro del orquestador de contenedores.
