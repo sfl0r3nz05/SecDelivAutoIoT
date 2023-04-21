@@ -105,3 +105,28 @@ A continuación, te presento una breve descripción de las herramientas encontra
 ### Primero pasos en la Raspberry Pi
 Para seguir con el proyecto, se me ha facilitado una Raspberry Pi para poder desarrollar el proyecto. En esta primera etapa hemos empezado desde cero formateando la tarjeta micro SD de la Raspberry Pi para tener un entorno nuevo y configurado con lo que necesitemos.
 
+#### Instalar Sistema Operativo Raspberry Pi
+Una vez formateada la tarjeta micro SD la cual vamos a utilizar en la Raspberry Pi, el primer paso es instalar el Sistema Operativo. Para ello, utilizando el programa _Raspberry Pi Imager_ vamos a instalar el Sistema Operativo _Raspberry Pi OS Lite (64-bit)_ en la tarjeta micro SD.
+
+Antes de instalar el Sistema Operativo, vamos a hacer una configuración para poder conectarse a la Raspberry Pi mediante SSH. Para ello, clicamos en la configuración (que se encuentra en la parte inferior del programa), y tenemos que seleccionar _Enable SSH_ y añadir un usuario y contraseña que es con la que nos vamos a conectar mediante SSH. Una vez hecho esto, ya está listo para instalar el Sistema Operativo.
+
+#### Iniciar Raspberry Pi
+El siguiente paso fue configurar la conexión a Internet en la Raspberry Pi para poder conectarse mediante SSH, lo cual presentó algunos desafíos. Para poder conectar la Raspberry Pi a Internet y poder conectarme mediante SSH, he conectado un adaptador USB 3.0 a Gigabit Ethernet al ordenador. Una vez hecho esto, hay que configurar la IP de la Raspberry Pi en la subred que está conectado el ordenador. Al hacer esto, ya se podrá conectar a la Raspberry Pi mediante SSH.
+
+Para poder conectarse mediante SSH y para actualizar e instalar paquetes, hay que tener una conexión a Internet en la Raspberry Pi.
+
+#### Instalación de K3s en la Raspberry Pi
+1. Editar el fichero `/boot/cmdline.txt` y añadir `cgroup_memory=1 cgroup_enable=memory` al final de la línea. Para ello, hay que ejecutar el siguiente comando:
+  <pre>sudo nano /boot/cmdline.txt</pre>
+  y agregar la línea de configuración como se indica a continuación:
+  <pre>console=serial0,115200 console=tty1 root=PARTUUID=32cbd588-02 rootfstype=ext4 fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory</pre>
+  Guardar el fichero y reiniciar la Raspberry Pi con el siguiente comando:
+  <pre>sudo reboot</pre>
+2. Una vez que la Raspberry Pi se haya reiniciado, hay que instalar K3s utilizando el siguiente comando:
+  <pre>curl -sfL https://get.k3s.io | sh -</pre>
+  Este comando descarga el instalador de K3s y lo ejecuta en la Raspberry Pi para poder instalar la última versión de K3s.
+3. Verificar que el servicio K3s se haya iniciado correctamente ejecutando el siguiente comando:
+  <pre>sudo systemctl status k3s</pre>
+  Este comando te muestra el estado actual del servicio K3s.
+
+Con estos pasos, ya estaría instalado K3s en la Raspberry Pi y se podrá empezar a utilizar para desplegar las aplicaciones.
