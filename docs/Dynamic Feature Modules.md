@@ -18,3 +18,7 @@ With Google Play Core Library, your app can download dynamic feature modules on 
 
 ## References
 - Android Dynamic Feature Modules : The Future - [medium.com](https://medium.com/mindorks/dynamic-feature-modules-the-future-4bee124c0f1)
+
+## Articles of interest
+- Exploring Dynamic Feature Modules - [droidcon.com](https://www.droidcon.com/2022/09/30/exploring-dynamic-feature-modules/)
+- On Demand Modules - [developer.android.com](https://developer.android.com/codelabs/on-demand-dynamic-delivery#0)
