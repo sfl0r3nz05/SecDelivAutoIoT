@@ -102,7 +102,10 @@ A continuación, te presento una breve descripción de las herramientas encontra
 - Trivy: Trivy es un escáner de vulnerabilidades de imágenes de contenedores de código abierto que puede integrarse en pipelines de CI/CD para identificar vulnerabilidades en imágenes de contenedores.
 - SonarQube: SonarQube es una herramienta de análisis de calidad de código y seguridad que permite a los desarrolladores mejorar la calidad del código y detectar vulnerabilidades de seguridad temprano en el ciclo de vida del desarrollo de software.
 
-### Instalación de K3s en la Raspberry Pi
+### Primeros pasos en la Raspberry Pi
+Para seguir con el proyecto, se me ha facilitado una Raspberry Pi para poder desarrollar el proyecto. En esta primera etapa hemos empezado desde cero formateando la tarjeta micro SD de la Raspberry Pi para tener un entorno nuevo y configurado con lo que necesitemos, instalando K3s.
+
+#### Instalación de K3s en la Raspberry Pi
 1. Editar el fichero `/boot/cmdline.txt` y añadir `cgroup_memory=1 cgroup_enable=memory` al final de la línea. Para ello, hay que ejecutar el siguiente comando:
   <pre>sudo nano /boot/cmdline.txt</pre>
   y agregar la línea de configuración como se indica a continuación:
