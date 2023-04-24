@@ -102,20 +102,7 @@ A continuación, te presento una breve descripción de las herramientas encontra
 - Trivy: Trivy es un escáner de vulnerabilidades de imágenes de contenedores de código abierto que puede integrarse en pipelines de CI/CD para identificar vulnerabilidades en imágenes de contenedores.
 - SonarQube: SonarQube es una herramienta de análisis de calidad de código y seguridad que permite a los desarrolladores mejorar la calidad del código y detectar vulnerabilidades de seguridad temprano en el ciclo de vida del desarrollo de software.
 
-### Primero pasos en la Raspberry Pi
-Para seguir con el proyecto, se me ha facilitado una Raspberry Pi para poder desarrollar el proyecto. En esta primera etapa hemos empezado desde cero formateando la tarjeta micro SD de la Raspberry Pi para tener un entorno nuevo y configurado con lo que necesitemos.
-
-#### Instalar Sistema Operativo Raspberry Pi
-Una vez formateada la tarjeta micro SD la cual vamos a utilizar en la Raspberry Pi, el primer paso es instalar el Sistema Operativo. Para ello, utilizando el programa _Raspberry Pi Imager_ vamos a instalar el Sistema Operativo _Raspberry Pi OS Lite (64-bit)_ en la tarjeta micro SD.
-
-Antes de instalar el Sistema Operativo, vamos a hacer una configuración para poder conectarse a la Raspberry Pi mediante SSH. Para ello, clicamos en la configuración (que se encuentra en la parte inferior del programa), y tenemos que seleccionar _Enable SSH_ y añadir un usuario y contraseña que es con la que nos vamos a conectar mediante SSH. Una vez hecho esto, ya está listo para instalar el Sistema Operativo.
-
-#### Iniciar Raspberry Pi
-El siguiente paso fue configurar la conexión a Internet en la Raspberry Pi para poder conectarse mediante SSH, lo cual presentó algunos desafíos. Para poder conectar la Raspberry Pi a Internet y poder conectarme mediante SSH, he conectado un adaptador USB 3.0 a Gigabit Ethernet al ordenador. Una vez hecho esto, hay que configurar la IP de la Raspberry Pi en la subred que está conectado el ordenador. Al hacer esto, ya se podrá conectar a la Raspberry Pi mediante SSH.
-
-Para poder conectarse mediante SSH y para actualizar e instalar paquetes, hay que tener una conexión a Internet en la Raspberry Pi.
-
-#### Instalación de K3s en la Raspberry Pi
+### Instalación de K3s en la Raspberry Pi
 1. Editar el fichero `/boot/cmdline.txt` y añadir `cgroup_memory=1 cgroup_enable=memory` al final de la línea. Para ello, hay que ejecutar el siguiente comando:
   <pre>sudo nano /boot/cmdline.txt</pre>
   y agregar la línea de configuración como se indica a continuación:
