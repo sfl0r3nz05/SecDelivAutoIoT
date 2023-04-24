@@ -116,7 +116,11 @@ A continuación, te presento una breve descripción de las herramientas encontra
   <pre>sudo systemctl status k3s</pre>
   Este comando te muestra el estado actual del servicio K3s.
 
-Con estos pasos, ya estaría instalado K3s en la Raspberry Pi y se podrá empezar a utilizar para desplegar las aplicaciones.
+![Captura de pantalla del comando systemctl status k3s](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20systemctl%20status%20k3s.PNG "Captura de pantalla del comando systemctl status k3s")
+
+Con estos pasos, ya estaría instalado K3s en la Raspberry Pi y se podrá empezar a utilizar para desplegar las aplicaciones. Para asegurarse de que se ha creado el master correctamente, se puede ejecutar el comando `sudo kubectl get nodes` para ver que único nodo que hay es el master que hemos creado en nuestra Raspberry Pi.
+
+![Captura de pantalla del comando kubectl get nodes](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20kubectl%20get%20nodes.PNG "Captura de pantalla del comando kubectl get nodes")
 
 ## Referencias
 - NIST - [docs.google.com](https://docs.google.com/document/d/1iaeQo4RI6FsqoR_ak5dra9uTT4lBzNNG5_q1vTTV4FQ/edit?usp=sharing)
