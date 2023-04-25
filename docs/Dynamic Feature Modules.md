@@ -31,6 +31,7 @@ Es recomendable utilizar Dynamic Feature Modules cuando la aplicación es de un 
 - Android Dynamic Feature Modules : The Future - [medium.com](https://medium.com/mindorks/dynamic-feature-modules-the-future-4bee124c0f1)
 - Exploring Dynamic Feature Modules - [droidcon.com](https://www.droidcon.com/2022/09/30/exploring-dynamic-feature-modules/)
   - [github.com/AlecStrong/boxapp](https://github.com/AlecStrong/boxapp)
+    - [https://github.com/AlecStrong](https://github.com/AlecStrong)
 
 ## Articles of interest
 - On Demand Modules - [developer.android.com](https://developer.android.com/codelabs/on-demand-dynamic-delivery#0)
