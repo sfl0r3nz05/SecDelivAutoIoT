@@ -8,7 +8,7 @@
 | Webhooks                            | Se conecta con el usuario de Github y seleccionas los repositorios. | Tienes que añadir el repositorio manualmente mediante plugins y credenciales. |
 | Entorno                             | En contenedores.                                                    | En el servidor.                                                               |
 | Configuraciones (por ejemplo build) | Mediante archivo YAML (.drone.yml).                                 | Mediante interfaz de usuario.                                                 |
-| MIRAR LO DE SECRETS                 |                                                                     |                                                                               |
+| Secrets                             | Utiliza un archivo encriptado y los expone como variables de entorno.| Utiliza un gestor de credenciales.                                           |
 | Docker                              | Sólo Docker, pero optimizado. (Para Docker la mejor opción)         | Opcional, pero lento. (Para Docker peor elección)                             |
 
 ## Time to migrate from Jenkins to Drone CI
