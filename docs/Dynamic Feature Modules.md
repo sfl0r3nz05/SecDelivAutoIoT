@@ -40,6 +40,8 @@ Dynamic feature Modules introduce una nueva forma de tener dependencias entre m�
 - Con Dynamic Feature Modules, se puede utilizar la aplicación base mientras que se descargan los módulos dinámicos.
 - La idea es que cada módulo funcionan como APK diferentes sólo que se hace referencia desde la aplicación base.
 
+Un ejemplo de una aplicación con Dynamic Feature Modules es Duolingo. Ésta utiliza Dynamic Feature Modules para descargar los diferentes idiomas que se pueden aprender en la aplicación.
+
 # References
 - Android Dynamic Feature Modules : The Future - [medium.com](https://medium.com/mindorks/dynamic-feature-modules-the-future-4bee124c0f1)
 - Exploring Dynamic Feature Modules - [droidcon.com](https://www.droidcon.com/2022/09/30/exploring-dynamic-feature-modules/)
