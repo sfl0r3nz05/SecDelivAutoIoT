@@ -19,6 +19,8 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT.
 ### [Diseño de arquitectura](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks#scenario-4-use-gitops-with-argo-cd-github-actions-and-aks-to-implement-cicd)
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/gitops-ci-cd-argo-cd.png" alt="GitOps CI/CD ArgoCD">
 
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Flujo%20GitOps%20IoT%20GitLab.PNG" alt="Flujo GitOps IoT GitLab">
+
 ## Referencias
 - Diseño, desarrollo e implementación de una arquitectura GitOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/22397/1/UPS-CT009712.pdf)
 - GitOps para Azure Kubernetes Service - [learn.microsoft.com](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks)
