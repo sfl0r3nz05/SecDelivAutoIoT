@@ -5,9 +5,10 @@ Un pipeline de CI/CD automatiza su proceso de entrega de software. El pipeline c
 ### Componentes
 Identificar los componentes clave para implementar GitOps en el entorno IoT.
 - Repositorio GitLab: es el repositorio donde se almacenará el código fuente de la aplicación.
+- GitLab CI/CD: es la herramienta que se encargará de la Integración Continua.
 - Raspberry Pi con K3s: es el dispositivo IoT que se encargará de la gestión del cluster Kubernetes y la ejecución de la infraestructura.
-- ArgoCD: es el agente CI/CD que se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes.
-- Herramienta de análisis de seguridad: es la herramienta (o las herramientas) que se utilizará para el análisis de la seguridad del código.
+- ArgoCD: es el agente CD que se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes.
+- Herramienta de análisis de seguridad: es la herramienta (o las herramientas) que se utilizará para el análisis (o chequeo) de la seguridad del código.
 
 ### Flujo de trabajo
 1. Los desarrolladores realizan cambios en el código de la aplicación y lo suben al repositorio de GitLab.
