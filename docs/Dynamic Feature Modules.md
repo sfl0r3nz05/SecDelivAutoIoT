@@ -18,20 +18,36 @@ With Google Play Core Library, your app can download dynamic feature modules on 
 
 # Exploring Dynamic Feature Modules
 ## Estructura de Android App Bunde (.aab)
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20estructura%20aab.PNG" alt="Estructura .abb" width="75%" height="75%">
 
 ## Características Dynamic Feature Modules
-En vez de que la aplicación dependa de la característica, la característica depende de la aplicación (_Añadir imagen del minuto 4:15_). La aplicación puede compilar sin esa característica.
+En vez de que la aplicación dependa de la característica, la característica depende de la aplicación. La aplicación puede compilar sin esa característica.
+
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20feature%20depende%20de%20app.PNG" alt="Feature depende de app">
 
 ### ¿Cuándo utilizar Dynamic Feature modules?
 Es recomendable utilizar Dynamic Feature Modules cuando la aplicación es de un gran tamaño, es decir, para ahorrar espacio. También es recomendable utilizar Dynamic Feature Modules cuando el equipo de trabajo es muy grande, ya que permite dividir en grupos que trabajarán en las diferentes características y son fáciles de "unir" a la aplicación.
 
-[_He dejado el vídeo en el minuto 21:54_]
+Dynamic feature Modules introduce una nueva forma de tener dependencias entre módulos. Antes tenía que estar todo en el módulo de la aplicación, ahora es posible tener dos módulos desaclopados. No puedes separar dos features que dependan de la misma librería.
 
-## References
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20diferentes%20modulos.PNG" alt="Diferentes módulos">
+
+# Dynamic Feature Modules (características importantes)
+- Los módulos dinámicos sólo se descargan a medida que el usuario lo vaya necesitando.
+- Se pueden desintalar los Dynamic feature Modules. Manualmente (como una aplicación, en ajustes) o eliminados automáticamente por el sistema operativo.
+- Por defecto, la descarga del Dynamic Feature Module se muestra en la barra de notificaciones.
+- En Dynamic Feature Modules, sólo se actualizan los módulos instalados que tengan una actualización, si no tiene actualización no se actualiza. Sin Dynamic Feature Modules, se tiene que actualizar la aplicación al completo.
+- Con Dynamic Feature Modules, se puede utilizar la aplicación base mientras que se descargan los módulos dinámicos.
+- La idea es que cada módulo funcionan como APK diferentes sólo que se hace referencia desde la aplicación base.
+
+# References
 - Android Dynamic Feature Modules : The Future - [medium.com](https://medium.com/mindorks/dynamic-feature-modules-the-future-4bee124c0f1)
 - Exploring Dynamic Feature Modules - [droidcon.com](https://www.droidcon.com/2022/09/30/exploring-dynamic-feature-modules/)
   - [github.com/AlecStrong/boxapp](https://github.com/AlecStrong/boxapp)
     - [https://github.com/AlecStrong](https://github.com/AlecStrong)
+- Descripción general de la entrega de funciones en Play - [developer.android.com](https://developer.android.com/guide/playcore/feature-delivery?hl=es-419)
 
-## Articles of interest
+# Articles of interest
 - On Demand Modules - [developer.android.com](https://developer.android.com/codelabs/on-demand-dynamic-delivery#0)
+- Navigation in feature modules - MAD Skills - [youtube.com](https://www.youtube.com/watch?v=iURWvHxTM3k&ab_channel=AndroidDevelopers)
+- How to Implement Dynamic Feature Module / Play Feature Module - Android Java and Kotlin - [youtube.com](https://www.youtube.com/watch?v=1-lf13pRLNo&t=225s&ab_channel=BiLalZurmati)
