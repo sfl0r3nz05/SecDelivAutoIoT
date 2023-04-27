@@ -25,3 +25,4 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT.
 ## Referencias
 - Diseño, desarrollo e implementación de una arquitectura GitOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/22397/1/UPS-CT009712.pdf)
 - GitOps para Azure Kubernetes Service - [learn.microsoft.com](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks)
+- Explaining GitOps: How does it work? - [youtube.com](https://www.youtube.com/watch?v=dIaX5IhRqkI&ab_channel=DevOpsJourney)
