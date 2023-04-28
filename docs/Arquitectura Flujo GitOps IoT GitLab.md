@@ -9,13 +9,13 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT:
 - Raspberry Pi con K3s: es el dispositivo IoT que se encargará de la gestión del cluster de Kubernetes y la ejecución de la infraestructura.
 - ArgoCD: es el agente CD que se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster de Kubernetes.
 - Herramienta de análisis de seguridad: es la herramienta (o las herramientas) que se utilizará para el análisis (o chequeo) de la seguridad del código (por ejemplo, SonarQube).
-- Docker Hub: es donde se almacenará la imagen del contenedor.
+- GitLab Container Registry: es donde se almacenará la imagen del contenedor.
 
 ### Flujo de trabajo
 1. Los desarrolladores realizan cambios en el código de la aplicación y lo suben al repositorio de GitLab.
-2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la imagen del contenedor en Docker Hub.
-3. Cuando la imagen se contruya con éxito, GitLab CI/CD publica la imagen en Docker Hub.
-4. ArgoCD detecta una nueva publicación de la imagen en Docker hub y se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes de la Raspberry Pi.
+2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la imagen del contenedor en GitLab Container Registry.
+3. Cuando la imagen se contruya con éxito, GitLab CI/CD publica la imagen en GitLab Container Registry.
+4. ArgoCD detecta una nueva publicación de la imagen en GitLab Container Registry y se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes de la Raspberry Pi.
 5. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
 6. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes de la Raspberry Pi.
 
