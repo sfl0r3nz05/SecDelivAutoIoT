@@ -18,7 +18,7 @@ Identificar los componenetes clave para implementar GitOps en el entorno Android
 6. La aplicación se publicará en la Play Store.
 
 ### Diseño
-
+<img src="" alt="Diseño arquitectura GitOps Android GitLab">
 
 ## Referencias
 - Diseño, desarrollo e implementación de una arquitectura GitOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/22397/1/UPS-CT009712.pdf)
