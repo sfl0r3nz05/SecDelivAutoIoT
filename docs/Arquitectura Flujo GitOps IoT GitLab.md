@@ -16,7 +16,8 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT.
 2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la aplicación.
 3. ArgoCD se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes de la Raspberry Pi.
 4. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
-5. Si las pruebas son exitosas, la imagen del contenedor se desplegará en Docker Hub.
+5. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes.
+6. La imagen del contenedor se desplegará en Docker Hub.
 
 ### [Diseño de arquitectura](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks#scenario-4-use-gitops-with-argo-cd-github-actions-and-aks-to-implement-cicd)
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/gitops-ci-cd-argo-cd.png" alt="GitOps CI/CD ArgoCD">
