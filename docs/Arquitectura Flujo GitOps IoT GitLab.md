@@ -3,7 +3,7 @@ Un pipeline de CI/CD automatiza su proceso de entrega de software. El pipeline c
 
 ## Diseño
 ### Componentes
-Identificar los componentes clave para implementar GitOps en el entorno IoT.
+Identificar los componentes clave para implementar GitOps en el entorno IoT:
 - Repositorio GitLab: es el repositorio donde se almacenará el código fuente de la aplicación y la configuración.
 - GitLab CI/CD: es la herramienta que se encargará de la Integración Continua.
 - Raspberry Pi con K3s: es el dispositivo IoT que se encargará de la gestión del cluster de Kubernetes y la ejecución de la infraestructura.
