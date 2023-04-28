@@ -25,7 +25,7 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Flujo%20GitOps%20IoT%20GitLab.PNG" alt="Flujo GitOps IoT GitLab">
 
 #### Mi diseño
-<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Dise%C3%B1o%20arquitectura%20Flujo%20GitOps%20IoT%20GitLab.drawio.png" alt="Diseño arquitectura GitOps IoT GitLab">
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Dise%C3%B1o%20arquitectura%20Flujo%20GitOps%20IoT%20GitLab.png" alt="Diseño arquitectura GitOps IoT GitLab">
 
 ## Referencias
 - Diseño, desarrollo e implementación de una arquitectura GitOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/22397/1/UPS-CT009712.pdf)
