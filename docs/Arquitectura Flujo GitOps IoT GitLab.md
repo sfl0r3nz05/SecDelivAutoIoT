@@ -8,7 +8,7 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT.
 - GitLab CI/CD: es la herramienta que se encargará de la Integración Continua.
 - Raspberry Pi con K3s: es el dispositivo IoT que se encargará de la gestión del cluster de Kubernetes y la ejecución de la infraestructura.
 - ArgoCD: es el agente CD que se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster de Kubernetes.
-- Herramienta de análisis de seguridad: es la herramienta (o las herramientas) que se utilizará para el análisis (o chequeo) de la seguridad del código.
+- Herramienta de análisis de seguridad: es la herramienta (o las herramientas) que se utilizará para el análisis (o chequeo) de la seguridad del código (por ejemplo, SonarQube).
 - Docker Hub: es donde se almacenará la imagen del contenedor.
 
 ### Flujo de trabajo
