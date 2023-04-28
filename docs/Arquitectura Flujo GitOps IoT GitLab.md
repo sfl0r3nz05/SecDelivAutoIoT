@@ -19,12 +19,7 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT:
 5. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
 6. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes de la Raspberry Pi.
 
-### [Diseño de arquitectura](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks#scenario-4-use-gitops-with-argo-cd-github-actions-and-aks-to-implement-cicd)
-<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/gitops-ci-cd-argo-cd.png" alt="GitOps CI/CD ArgoCD">
-
-<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Flujo%20GitOps%20IoT%20GitLab.PNG" alt="Flujo GitOps IoT GitLab">
-
-#### Mi diseño
+### Diseño de arquitectura
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Dise%C3%B1o%20arquitectura%20Flujo%20GitOps%20IoT%20GitLab.png" alt="Diseño arquitectura GitOps IoT GitLab">
 
 ## Referencias
