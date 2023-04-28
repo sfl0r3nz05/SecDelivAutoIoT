@@ -13,11 +13,11 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT:
 
 ### Flujo de trabajo
 1. Los desarrolladores realizan cambios en el código de la aplicación y lo suben al repositorio de GitLab.
-2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la aplicación.
-3. ArgoCD se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes de la Raspberry Pi.
-4. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
-5. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes.
-6. La imagen del contenedor se desplegará en Docker Hub.
+2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la imagen del contenedor en Docker Hub.
+3. Cuando la imagen se contruya con éxito, GitLab CI/CD publica la imagen en Docker Hub.
+4. ArgoCD detecta una nueva publicación de la imagen en Docker hub y se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes de la Raspberry Pi.
+5. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
+6. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes de la Raspberry Pi.
 
 ### [Diseño de arquitectura](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks#scenario-4-use-gitops-with-argo-cd-github-actions-and-aks-to-implement-cicd)
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/gitops-ci-cd-argo-cd.png" alt="GitOps CI/CD ArgoCD">
@@ -31,6 +31,7 @@ Identificar los componentes clave para implementar GitOps en el entorno IoT:
 - Diseño, desarrollo e implementación de una arquitectura GitOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/22397/1/UPS-CT009712.pdf)
 - GitOps para Azure Kubernetes Service - [learn.microsoft.com](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks)
 - Explaining GitOps: How does it work? - [youtube.com](https://www.youtube.com/watch?v=dIaX5IhRqkI&ab_channel=DevOpsJourney)
+- GitLab Container Registry - [docs.gitlab.com](https://docs.gitlab.com/ee/user/packages/container_registry/)
 
 
 _[Se puede utilizar dos repositorios en vez de uno sólo. Uno para el código fuente y el otro para la configuración.]_
