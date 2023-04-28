@@ -11,19 +11,22 @@ Identificar los componenetes clave para implementar GitOps en el entorno Android
 
 ### Flujo de trabajo
 1. Los desarrolladores realizan cambios en el código de la aplicación y lo suben al repositorio de GitLab.
-2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la aplicación. Aquí es donde se compilará la aplicación y generará el APK.
-3. ArgoCD se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster de Kubernetes de la Raspberry Pi.
-4. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
-5. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes.
-6. La aplicación se publicará en la Play Store.
+2. GitLab CI/CD desencadena la ejecución de los flujos de trabajo definidos en “.gitlab-ci.yml” para el build, test y deploy de la imagen del contenedor en GitLab Container Registry. Aquí es donde se compilará la aplicación y generará el APK.
+3. Cuando el APK se genere con éxito, GitLab CI/CD publica la imagen en GitLab Container Registry.
+4. ArgoCD detecta una nueva publicación de la imagen en GitLab Container Registry y se encarga de la implementación de la aplicación y la configuración de la infraestructura en el cluster Kubernetes de la Raspberry Pi.
+5. ArgoCD ejecuta los chequeos de seguridad (herramientas de análisis de seguridad).
+6. Si las pruebas son exitosas, ArgoCD construirá la imagen en el cluster de Kubernetes de la Raspberry Pi.
+7. Una vez que la nueva versión de la aplicación ha pasado exitosamente todas las pruebas y ha sido implementada en el cluster de Kubernetes de la Raspberry Pi, se puede publicar la aplicación en la Play Store (manualmente).
 
 ### Diseño
-<img src="" alt="Diseño arquitectura GitOps Android GitLab">
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Dise%C3%B1o%20arquitectura%20Flujo%20GitOps%20Android%20GitLab.png" alt="Diseño arquitectura GitOps Android GitLab">
 
 ## Referencias
 - Diseño, desarrollo e implementación de una arquitectura GitOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/22397/1/UPS-CT009712.pdf)
 - GitOps para Azure Kubernetes Service - [learn.microsoft.com](https://learn.microsoft.com/es-es/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks)
 - Explaining GitOps: How does it work? - [youtube.com](https://www.youtube.com/watch?v=dIaX5IhRqkI&ab_channel=DevOpsJourney)
+- GitLab Container Registry - [docs.gitlab.com](https://docs.gitlab.com/ee/user/packages/container_registry/)
 
 
 _[Se puede utilizar dos repositorios en vez de uno sólo. Uno para el código fuente y el otro para la configuración.]_
+<br>*_Esta aquitectura es la misma que la de IoT solo que hay que añadir la publicación de la app en la Play Store (manualmente) si ha pasado todos los chequeos_
