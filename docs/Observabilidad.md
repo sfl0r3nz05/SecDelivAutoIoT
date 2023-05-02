@@ -36,6 +36,11 @@ Datos y pilares adicionales de observabilidad incluyen:
 - Perfilado continuo: evaluación del rendimiento detallado del código.
 - Monitoreo de usuario reales (RUM): comprensión del rendimiento de la aplicación desde la perspectiva de un usuario real.
 
+### Diferencia entre monitoreo y observabilidad
+El monitoreo es la práctica de recopilar y analizar datos de una aplicación o sistema para detectar y diagnosticar problemas. Esto se logra a través de la recopilación de métricas y registros, la configuración de alertas y visualización de gráficos y paneles de control.
+
+Por otro lado, la observabilidad se refiere a la capacidad de un sistema para ser monitoreado, rastreado y analizado. Se trata de un enfoque más amplio y proactivo que busca comprender el comportamineto interno del sistema y su rendimiento en el mundo real.
+
 ### Conclusión
 las métricas y las alertas son piezas fundamentales en la monitorización de una aplicación. Proporcionan información sobre la salud y el rendimiento de tus servicios.
 
