@@ -20,8 +20,25 @@ Las métricas y gráficos sólo constituyen la mitad de una solución de monitor
 
 ¿Qué constituye una buena alerta? Además de una alerta para cada una de las Señales de Oro de tu aplicación, es posible que necesites una alerta entoeno a una métrica clave para monitorear. Cuando esto sucede, ten en cuenta un par de pautas a seguir al crear alertas: no establezca límites demasiados bajos y evitar alertas que no sean accionables.
 
+### ¿Por qué centrarse en la observabilidad?
+Enfocarse en la observabilidad puede ayudar a reducir el tiempo medio de resolución (MTTR), lo que resulta en interrupciones más cortas, mejor rendimiento de la aplicación y una experiencia del cliente mejorada. La observabilidad también es importante para los interesados no técnicos y las unidades de negocios. La observabilidad puede proporcionar una mejor visión del rendimiento de los KPI (Indicadores Clave de Rendimiento), así como opciones de autoservicio para diferentes equipos.
+
+El software y las aplicaciones modernas dependen en gran medida de ofrecer buena experiencia de usuario (UX). El monitoreo de métricas estáticas no siempre contará la historia completa sobre la UX o el rendimiento del sistema. Puede haber problemas graves acechando detrás de paneles de métricas aparentemente saludables.
+
+### Métricas clave de observabilidad
+Para las organizaciones que han decidido implementar herramientas de observabilidad, el siguiente paso es identificar los objetivos principales de la observabilidad y cómo se puede implementar mejor en toda su pila de tecnologías:
+- Registros: información y eventos.
+- Métricas: medidas de métricas específicas y datos de rendimiento.
+- rastreo: registro del rendimiento de las solicitudes de extremo a extremo durante la ejecución.
+
+Datos y pilares adicionales de observabilidad incluyen:
+- rastreo de errores: registros más detallados con agregación de información.
+- Perfilado continuo: evaluación del rendimiento detallado del código.
+- Monitoreo de usuario reales (RUM): comprensión del rendimiento de la aplicación desde la perspectiva de un usuario real.
+
 ### Conclusión
 las métricas y las alertas son piezas fundamentales en la monitorización de una aplicación. Proporcionan información sobre la salud y el rendimiento de tus servicios.
 
 ## Referencias
 - DevOps For The Desperate A Hands-On Survival Guide - [bibis.ir](https://bibis.ir/science-books/programming/2022/Devops%20For%20The%20Desperate%20A%20Hands-On%20Survival%20Guide%20by%20Bradley%20Smith_bibis.ir.pdf)
+- Observability vs Monitoring in DevOps - [about.gitlab.com](https://about.gitlab.com/blog/2022/06/14/observability-vs-monitoring-in-devops/)
