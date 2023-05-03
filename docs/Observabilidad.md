@@ -41,9 +41,6 @@ El monitoreo es la práctica de recopilar y analizar datos de una aplicación o 
 
 Por otro lado, la observabilidad se refiere a la capacidad de un sistema para ser monitoreado, rastreado y analizado. Se trata de un enfoque más amplio y proactivo que busca comprender el comportamineto interno del sistema y su rendimiento en el mundo real.
 
-### Conclusión
-las métricas y las alertas son piezas fundamentales en la monitorización de una aplicación. Proporcionan información sobre la salud y el rendimiento de tus servicios.
-
 ## Métricas de monitorización
 - **Plazo para modificaciones**: es el tiempo transcurrido entre el momento en que se confirma un cambio de código en la rama troncal y el momento en que se encuentra listo para implementar. Por ejemplo, cuando el código supera todas las pruebas necesarias previas a la publicación.
 - **Tasa de errores por modificaciones**: es el porcentaje de cambios realizados en el código que requieren una corrección inmediata u otras soluciones tras haber pasado a producción.
@@ -57,6 +54,9 @@ las métricas y las alertas son piezas fundamentales en la monitorización de un
 - **Frecuencia de implementación**: la capacidad de implementar bajo demanda requiere una canalización de implementación automatizada que incorpore los mecanismos automatizados de pruebas y que minimice la necesidad de intervención humana.
 - **Tiempo medio de recuperación (MTTR)**: la capacidad de recuperarse de un error depende de la capacidad de identificar rápidamente cuándo se produce un error e implementar una corrección o revisión de los cambios que han provocado ese error. Por lo general, esto se lleva a cabo supervisando continuamente el estado del sistema y alertando al equipo de operaciones en caso de que se produzca algún error.
 - **Duración del ciclo**: los informes de duración del ciclo permiten a los responsables de proyectos establecer una referencia en la canalización de desarrollo que pueda servir para evaluar procesos futuros.
+
+## Conclusión
+Las métricas y las alertas son piezas fundamentales en la monitorización de una aplicación. Proporcionan información sobre la salud y el rendimiento de tus servicios. La capacidad de medir y supervisar el rendimiento mediante las diferentes métricas permite a los equipos acelerar en velocidad y aumentar su calidad.
 
 ## Referencias
 - DevOps For The Desperate A Hands-On Survival Guide - [bibis.ir](https://bibis.ir/science-books/programming/2022/Devops%20For%20The%20Desperate%20A%20Hands-On%20Survival%20Guide%20by%20Bradley%20Smith_bibis.ir.pdf)
