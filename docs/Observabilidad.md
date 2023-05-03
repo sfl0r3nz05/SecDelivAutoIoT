@@ -44,6 +44,21 @@ Por otro lado, la observabilidad se refiere a la capacidad de un sistema para se
 ### Conclusión
 las métricas y las alertas son piezas fundamentales en la monitorización de una aplicación. Proporcionan información sobre la salud y el rendimiento de tus servicios.
 
+## Métricas de monitorización
+- **Plazo para modificaciones**: es el tiempo transcurrido entre el momento en que se confirma un cambio de código en la rama troncal y el momento en que se encuentra listo para implementar. Por ejemplo, cuando el código supera todas las pruebas necesarias previas a la publicación.
+- **Tasa de errores por modificaciones**: es el porcentaje de cambios realizados en el código que requieren una corrección inmediata u otras soluciones tras haber pasado a producción.
+- **Frecuencia de implementación**: es fundamental saber con qué frecuencia se implementa código nuevo en la fase de produción para poder medir el éxito de DevOps.
+- **Tiempo medio de recuperación (MTTR)**: mide el tiempo que se tarda en recuperarse de una interrupción parcial del servicio o de un fallo total.
+- **Duración del ciclo**: es el tiempo que un equipo dedica a trabajar en un elemento hasta que está listo para lanzarse.
+
+### Cómo medir, utilizar y mejorar las métricas de DevOps
+- **Plazo para modificaciones**: la automatización de pruebas, el desarrollo basado en troncos y el trabajo en lotes pequeños son elementos clave para mejorar los plazos.
+- **Tasa de errores por modificaciones**: las mismas prácticas que contribuyen a acortar los plazos (automatización de pruebas, desarrollo basado en troncos y trabajo en lotes pequeños) se asocian a una reducción de las tasas de errores por modificación.
+- **Frecuencia de implementación**: la capacidad de implementar bajo demanda requiere una canalización de implementación automatizada que incorpore los mecanismos automatizados de pruebas y que minimice la necesidad de intervención humana.
+- **Tiempo medio de recuperación (MTTR)**: la capacidad de recuperarse de un error depende de la capacidad de identificar rápidamente cuándo se produce un error e implementar una corrección o revisión de los cambios que han provocado ese error. Por lo general, esto se lleva a cabo supervisando continuamente el estado del sistema y alertando al equipo de operaciones en caso de que se produzca algún error.
+- **Duración del ciclo**: los informes de duración del ciclo permiten a los responsables de proyectos establecer una referencia en la canalización de desarrollo que pueda servir para evaluar procesos futuros.
+
 ## Referencias
 - DevOps For The Desperate A Hands-On Survival Guide - [bibis.ir](https://bibis.ir/science-books/programming/2022/Devops%20For%20The%20Desperate%20A%20Hands-On%20Survival%20Guide%20by%20Bradley%20Smith_bibis.ir.pdf)
 - Observability vs Monitoring in DevOps - [about.gitlab.com](https://about.gitlab.com/blog/2022/06/14/observability-vs-monitoring-in-devops/)
+- Métricas de DevOps - [atlassian.com](https://www.atlassian.com/es/devops/frameworks/devops-metrics)
