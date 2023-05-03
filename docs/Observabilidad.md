@@ -58,6 +58,17 @@ Por otro lado, la observabilidad se refiere a la capacidad de un sistema para se
 - **Tiempo medio de recuperación (MTTR)**: la capacidad de recuperarse de un error depende de la capacidad de identificar rápidamente cuándo se produce un error e implementar una corrección o revisión de los cambios que han provocado ese error. Por lo general, esto se lleva a cabo supervisando continuamente el estado del sistema y alertando al equipo de operaciones en caso de que se produzca algún error.
 - **Duración del ciclo**: los informes de duración del ciclo permiten a los responsables de proyectos establecer una referencia en la canalización de desarrollo que pueda servir para evaluar procesos futuros.
 
+## Four Key Metrics
+- **Frecuencia de Implementación**: rastrea la frecuencia de las implementaciones no solo en producción, sino también en los entornos de prueba y ensayo.
+- **Plazo de Ejecución para Cambios**: es el tiempo que se tarda entre el momento en que se pide un cambio de código hasta que se ejecuta correctamente en producción.
+- **Tiempo Medio de Restauración**: es el tiempo medio que se necesita para volver al servicio cuando ha habido un fallo en la producción.
+- **Tasa de Fallo de Cambio**: consiste en la relación entre cambios que han fallado y los cambios exitosos en un servicio.
+
+## ¿Qué es KPI?
+Un KPI (Key Performance Indicator, Indicador Clave de Rendimiento) es una métrica para medir el rendimiento y el éxito de un proceso, proyecto o actividad en una organización. En DevOps, los KPI se utilizan para medir la eficacia de las prácticas y herramientas DevOps en términos de velocidad, calidad y eficiencia de entrega de software. Por ejemplo, algunos KPI comunes en DevOps incluyen el tiempo promedio de entrega de nuevas versiones, la tasa de éxito de las implementaciones, el tiempo de recuperación de incidentes...
+
+Los KPI son importantes en DevOps porque permiten a los equipos de desarrollo y operaciones identificar áreas de mejora, tomar decisiones informadas y realizar ajustes en tiempo real para optimizar procesos y mejorar el rendimiento general del equipo y la organización.
+
 ## Conclusión
 Las métricas y las alertas son piezas fundamentales en la monitorización de una aplicación. Proporcionan información sobre la salud y el rendimiento de tus servicios. La capacidad de medir y supervisar el rendimiento mediante las diferentes métricas permite a los equipos acelerar en velocidad y aumentar su calidad.
 
@@ -66,3 +77,7 @@ Las métricas y las alertas son piezas fundamentales en la monitorización de un
 - Observability vs Monitoring in DevOps - [about.gitlab.com](https://about.gitlab.com/blog/2022/06/14/observability-vs-monitoring-in-devops/)
 - Métricas de DevOps - [atlassian.com](https://www.atlassian.com/es/devops/frameworks/devops-metrics)
 - 9 key DevOps metrics for success - [dynatrace.com](https://www.dynatrace.com/news/blog/devops-metrics-for-success/)
+- ¿Cómo medir el éxito de DEVOPS a través de las FOUR KEY METRICS? - [youtube.com](https://www.youtube.com/watch?v=FKDzAGYzePs&list=TLPQMDMwNTIwMjNOb3RT_ME9Sg&index=3&ab_channel=SENTRIO)
+
+## Prometheus: Monitorización de Métricas
+??? https://prometheus.io/
