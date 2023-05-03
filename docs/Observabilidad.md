@@ -46,7 +46,10 @@ Por otro lado, la observabilidad se refiere a la capacidad de un sistema para se
 - **Tasa de errores por modificaciones**: es el porcentaje de cambios realizados en el código que requieren una corrección inmediata u otras soluciones tras haber pasado a producción.
 - **Frecuencia de implementación**: es fundamental saber con qué frecuencia se implementa código nuevo en la fase de produción para poder medir el éxito de DevOps.
 - **Tiempo medio de recuperación (MTTR)**: mide el tiempo que se tarda en recuperarse de una interrupción parcial del servicio o de un fallo total.
+- **Tiempo medio de detección (MTTD)**: es el tiempo promedio transcurrido desde que comienza un incidente hasta que se descubre.
 - **Duración del ciclo**: es el tiempo que un equipo dedica a trabajar en un elemento hasta que está listo para lanzarse.
+- **Porcentaje de código cubierto**: mide la proporción de código sujeto a pruebas automatizadas.
+- **Disponibilidad de la aplicación**: mide la proporción del tiempo en que una aplicación está completamente funcional y accesible para satisfacer las necesidades de los usuarios finales.
 
 ### Cómo medir, utilizar y mejorar las métricas de DevOps
 - **Plazo para modificaciones**: la automatización de pruebas, el desarrollo basado en troncos y el trabajo en lotes pequeños son elementos clave para mejorar los plazos.
@@ -62,3 +65,4 @@ Las métricas y las alertas son piezas fundamentales en la monitorización de un
 - DevOps For The Desperate A Hands-On Survival Guide - [bibis.ir](https://bibis.ir/science-books/programming/2022/Devops%20For%20The%20Desperate%20A%20Hands-On%20Survival%20Guide%20by%20Bradley%20Smith_bibis.ir.pdf)
 - Observability vs Monitoring in DevOps - [about.gitlab.com](https://about.gitlab.com/blog/2022/06/14/observability-vs-monitoring-in-devops/)
 - Métricas de DevOps - [atlassian.com](https://www.atlassian.com/es/devops/frameworks/devops-metrics)
+- 9 key DevOps metrics for success - [dynatrace.com](https://www.dynatrace.com/news/blog/devops-metrics-for-success/)
