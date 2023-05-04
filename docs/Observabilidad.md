@@ -79,5 +79,21 @@ Las métricas y las alertas son piezas fundamentales en la monitorización de un
 - 9 key DevOps metrics for success - [dynatrace.com](https://www.dynatrace.com/news/blog/devops-metrics-for-success/)
 - ¿Cómo medir el éxito de DEVOPS a través de las FOUR KEY METRICS? - [youtube.com](https://www.youtube.com/watch?v=FKDzAGYzePs&list=TLPQMDMwNTIwMjNOb3RT_ME9Sg&index=3&ab_channel=SENTRIO)
 
-## Prometheus: Monitorización de Métricas
-??? https://prometheus.io/
+# Prometheus: Monitorización de Métricas
+Prometheus es un conjunto de herramientas de monitoreo y alerta de sistemas de código abierto. Prometheus recopila y almacena sus métricas como datos de series temporales, es decir, la información de las métricas se almacena con la marca de tiempo en la que se registró, junto con pares clave-valor opcionales denominados etiquetas.
+
+## Características
+- Modelo de datos multidimensional con datos de series temporales identificados por nombre de métrica y pares clave/valor.
+- Sin dependencia del almacenamiento distribuido; los nodos de un solo servidor son autónomos.
+- La recopilación de series temporales se realiza a través de un modelo de extracción a través de HTTP.
+- Los objetivos se descubren a través del descubrimiento de servicios o la configuración estática.
+- Múltiples modos de soporte de gráficos y tableros.
+
+## ¿Qué son las métricas?
+En términos sencillos, las métricas son medidas numéricas. Serie temporal significa que los cambios se registran a lo largo del tiempo. Lo que los usuarios quieren medir difiere de una aplicación a otra.
+
+Las métricas juegan un papel importante para comprender por qué su aplicación funciona de cierta manera. Supongamos que está ejecutando una aplicación web y descubre que la aplicación es lenta. Necesitará cierta información para saber qué está pasando con su aplicación. Por ejemplo, la aplicación puede volverse lenta cuando la cantidad de solicitudes es alta. Si tiene la métrica de recuento de solicitudes, puede detectar el motivo y aumentar la cantidad de servidores para manejar la carga.
+
+## Referencias
+- Desarrollo e Implementación de una Arquitectura DevOps - [dspace.ups.edu.ec](https://dspace.ups.edu.ec/bitstream/123456789/21675/1/UPS-CT009520.pdf)
+- Prometheus - [prometheus.io](https://prometheus.io/docs/introduction/overview/)
