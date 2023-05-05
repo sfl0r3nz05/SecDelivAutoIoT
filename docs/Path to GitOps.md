@@ -84,3 +84,6 @@ The Pulumi Kubernetes Operator is particularly interesting because it broadens t
 
 ### Summary
 In this chapter, we reviewed the origins of Infrastructure as code, along with its advantages and shortcomings. We also saw how Kubernetes changed the game for Infrastructure as code. We went through popular GitOps tools, what they have to offer, and what choices you have when looking for a GitOps controller.
+
+## References
+- the Path to GitOps - [developers.redhat.com](https://developers.redhat.com/e-books/path-gitops)
