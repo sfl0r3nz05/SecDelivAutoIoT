@@ -19,7 +19,7 @@
 6. Operación: GitLab CI/CD notifica a ArgoCD para que construya e implemente la imagen en el cluster Kubernetes de la Raspberry Pi.
 7. Monitoreo: Se utiliza una solución de monitoreo para supervisar la aplicación en producción, detectar problemas y recopilar información sobre el rendimiento de la aplicación.
 
-<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Ciclo%20de%20Vida%20DevOps%20IoT.png">
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Ciclo%20de%20Vida%20DevOps%20IoT.svg" alt="Ciclo de vida DevOps para dispositivos IoT">
 
 ## Referencias
 - Introducción al Ciclo de Vida de DevOps - [kranio.io](https://www.kranio.io/blog/introduccion-al-ciclo-de-vida-de-devops)
