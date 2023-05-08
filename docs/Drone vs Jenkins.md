@@ -54,6 +54,7 @@ Según por lo que se ha podido leer, Drone parece una mejor opción para un ento
 - Drone CI vs Jenkins. Fight!- Niklas Hole, Ole Anders Stokker - [youtube.com](https://www.youtube.com/watch?v=c9mhpFSDR7I&ab_channel=NDCConferences)
   - Drone CI vs Jenkins: Demo - [github.com](https://github.com/niklasmh/drone-vs-jenkins-demo)
 - Why It’s Time to Migrate from Jenkins to Drone CI - [harness.io](https://www.harness.io/blog/why-migrate-from-jenkins-to-drone-ci)
+- Done.io: Free vs Enterprise - [drone.io](https://www.drone.io/enterprise/opensource/#features)
 
 # Artículos de interés
 - Drone vs Jenkins - [knapsackpro.com](https://knapsackpro.com/ci_comparisons/drone/vs/jenkins)
