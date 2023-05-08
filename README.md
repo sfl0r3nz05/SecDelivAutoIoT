@@ -8,6 +8,8 @@
 - [Estado del Arte](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Estado%20del%20Arte.md)
 - [Herramientas para análisis de seguridad](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Herramientas%20para%20an%C3%A1lisis%20de%20seguridad.md)
 - [Repositorio con los diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o)
+- [Métricas de monitorización](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/M%C3%A9tricas%20de%20monitorizaci%C3%B3n.md)
+- [Repositorio con apuntes propios](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/apuntes)
 
 ## Continues Integration
 
