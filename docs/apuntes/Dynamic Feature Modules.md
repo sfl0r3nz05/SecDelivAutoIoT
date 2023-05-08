@@ -48,6 +48,7 @@ Un ejemplo de una aplicación con Dynamic Feature Modules es Duolingo. Ésta uti
   - [github.com/AlecStrong/boxapp](https://github.com/AlecStrong/boxapp)
     - [https://github.com/AlecStrong](https://github.com/AlecStrong)
 - Descripción general de la entrega de funciones en Play - [developer.android.com](https://developer.android.com/guide/playcore/feature-delivery?hl=es-419)
+- The Android App Bundle speaks Duolingo’s language, reducing its app size by 56% - [play.google.com](https://play.google.com/intl/en-GB/console/about/duolingo-casestudy/)
 
 # Articles of interest
 - On Demand Modules - [developer.android.com](https://developer.android.com/codelabs/on-demand-dynamic-delivery#0)
