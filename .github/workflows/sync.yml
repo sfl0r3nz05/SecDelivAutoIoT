@@ -1,0 +1,20 @@
+name: Sync with GitLab
+
+on:
+  push:
+    branches:
+      - main  # Cambia esto a la rama principal de tu repositorio de GitHub
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Push changes to GitLab
+        run: |
+          git remote add gitlab https://gitlab.com/mikel-m/SecDelivAutoIoT.git
+          git checkout -b gitlab-sync
+          git push gitlab gitlab-sync
