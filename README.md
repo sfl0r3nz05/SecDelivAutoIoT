@@ -18,6 +18,9 @@
 - [Repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT)
 - [Repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT)
 
+### Repositoriode GitHub
+- [Repositorio de GitHub](https://github.com/sfl0r3nz05/SecDelivAutoIoT)
+
 ## Proyecto
 Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de aplicaciones siguiendo las arquitecturas diseñadas en los [diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o).
 
