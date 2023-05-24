@@ -22,7 +22,7 @@
 - [Repositorio de GitHub](https://github.com/sfl0r3nz05/SecDelivAutoIoT)
 
 ## Proyecto
-Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de aplicaciones siguiendo las arquitecturas diseñadas en los [diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o).
+Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones siguiendo las arquitecturas diseñadas en los [diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o). En este momento estamos utilizando una aplicación simpe en Python pero el objetivo es poder utilizar también aplicaciones Android.
 
 ### Etapa 1
 En esta primera etapa se define implementa el flujo de CI en el [repositorio de GitLab de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT).
