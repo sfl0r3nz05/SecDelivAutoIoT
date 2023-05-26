@@ -23,15 +23,24 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 argocd admin initial-password -n argocd
 argocd login <ARGOCD_SERVER>
 ```
+***
 
 ## Create app
 ```
-argocd app create nameapp --repo https://gitlab.com/user/repository.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
-# path es la ruta donde está la aplicación del repositorio, en este caso, en la ruta raíz
+argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
 ```
-### En la Raspberry Pi
+- `--path .` es la ruta donde está la aplicación del repositorio, en este caso, en la ruta raíz.
+- `--dest-server https://kubernetes.default.svc`es el cluster de K3s que se va a desplegar, en este caso, el cluster local.
+- `--dest-namespace default` es el namespace en el que se va a desplegar, por defecto es _default_, pero en mis pruebas he puesto _argocd_.
+
+### Sincronizar app
 ```
-argocd app create nameapp --repo https://gitlab.com/user/repository.git --path . --dest-server <ip-raspberry-pi> --dest-namespace <namespace-raspberry-pi>
+argocd app sync <nombre-app>
+```
+
+### Desplegar app desde ArgoCD en la Raspberry Pi
+```
+argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --path . --dest-server https://<ip-raspberry-pi> --dest-namespace <namespace-raspberry-pi>
 ```
 
 ## Add repo
