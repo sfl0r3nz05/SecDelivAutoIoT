@@ -29,6 +29,10 @@ argocd login <ARGOCD_SERVER>
 argocd app create nameapp --repo https://gitlab.com/user/repository.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
 # path es la ruta donde está la aplicación del repositorio, en este caso, en la ruta raíz
 ```
+### En la Raspberry Pi
+```
+argocd app create nameapp --repo https://gitlab.com/user/repository.git --path . --dest-server <ip-raspberry-pi> --dest-namespace <namespace-raspberry-pi>
+```
 
 ## Add repo
 Hay que crear un Token de acceso en GitLab
