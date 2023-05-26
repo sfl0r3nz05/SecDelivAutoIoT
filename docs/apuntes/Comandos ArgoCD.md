@@ -27,11 +27,11 @@ argocd login <ARGOCD_SERVER>
 
 ## Create app
 ```
-argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default
+argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --path <ruta-yaml-configuración> --dest-server https://kubernetes.default.svc --dest-namespace argocd
 ```
-- `--path .` es la ruta donde está la aplicación del repositorio, en este caso, en la ruta raíz.
+- `--path` es la ruta donde está la configuración YAML, en nuestro caso de ejemplo, dento de la carpeta _kubernetes_, por lo que habría que poner `--path kubernetes`
 - `--dest-server https://kubernetes.default.svc`es el cluster de K3s que se va a desplegar, en este caso, el cluster local.
-- `--dest-namespace default` es el namespace en el que se va a desplegar, por defecto es _default_, pero en mis pruebas he puesto _argocd_.
+- `--dest-namespace argocd` es el namespace en el que se va a desplegar, por defecto es _default_, pero en mis pruebas he puesto _argocd_.
 
 ### Sincronizar app
 ```
