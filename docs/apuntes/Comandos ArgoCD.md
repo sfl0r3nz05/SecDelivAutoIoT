@@ -38,6 +38,12 @@ argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --p
 argocd app sync <nombre-app>
 ```
 
+### app get
+```
+argocd app list
+argocd app get <nombre-app>
+```
+
 ### Desplegar app desde ArgoCD en la Raspberry Pi
 ```
 argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --path . --dest-server https://<ip-raspberry-pi> --dest-namespace <namespace-raspberry-pi>
