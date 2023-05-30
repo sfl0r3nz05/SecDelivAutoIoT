@@ -33,6 +33,11 @@ argocd app create <nombre-app> --repo https://gitlab.com/user/repository.git --p
 - `--dest-server https://kubernetes.default.svc` es el cluster de K3s que se va a desplegar, en este caso, el cluster local.
 - `--dest-namespace argocd` es el namespace en el que se va a desplegar, por defecto es _default_, pero en mis pruebas he puesto _argocd_.
 
+## Delete app
+```
+argocd app delete <nombre-app>
+```
+
 ### Sincronizar app
 ```
 argocd app sync <nombre-app>
