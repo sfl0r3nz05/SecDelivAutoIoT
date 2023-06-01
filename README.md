@@ -22,7 +22,7 @@
 - [Repositorio de GitHub](https://github.com/sfl0r3nz05/SecDelivAutoIoT)
 
 ### [Documentación de flujos](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/Domumentacion-Flujos)
-- [Etapa 1: Flujo GitOps IoT GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Domumentacion-Flujos/Etapa%201.md)
+- [Etapa 1: Flujo GitOps IoT GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Domumentacion-Flujos/Etapa%201-Flujo%20GitOps%20IoT%20GitLab.md)
 
 ## Proyecto
 Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones siguiendo las arquitecturas diseñadas en los [diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o). En este momento estamos utilizando una aplicación simpe en Python pero el objetivo es poder utilizar también aplicaciones Android.
