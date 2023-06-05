@@ -18,7 +18,7 @@
 - [Repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT)
 - [Repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT)
 
-### Repositoriode GitHub
+### Repositorio de GitHub
 - [Repositorio de GitHub](https://github.com/sfl0r3nz05/SecDelivAutoIoT)
 
 ### [Documentación de flujos](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/Domumentacion-Flujos)
