@@ -21,3 +21,8 @@ Al acceder a `localhost:8080` te pide una contraseña de Jenkins. Para saber la 
 ```
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+
+## Plugins instalados
+- GitLab Plugin
+- SonarQube Scanner for Jenkins
+- Slack Notification
