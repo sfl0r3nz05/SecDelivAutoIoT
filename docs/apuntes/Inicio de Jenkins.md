@@ -27,3 +27,4 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 - SonarQube Scanner for Jenkins
 - Slack Notification
 - Docker Pipeline
+- Docker
