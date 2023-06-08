@@ -22,11 +22,8 @@
 - [Repositorio de GitHub](https://github.com/sfl0r3nz05/SecDelivAutoIoT)
 
 ### Registro de imágenes
-#### GitLab Container Registry
-- [mikel-m/secdelivautoiot](https://gitlab.com/mikel-m/SecDelivAutoIoT/container_registry/4192474)
-
-#### Docker Hub
-- [mikelm98/secdelivautoiot](https://hub.docker.com/layers/mikelm98/secdelivautoiot/latest/images/sha256-d75a06ef64cdf2ef69b049c69476cccd8f51c9c2e0e202003da57a76e1bd0970?context=repo)
+- GitLab Container Registry: [mikel-m/secdelivautoiot](https://gitlab.com/mikel-m/SecDelivAutoIoT/container_registry/4192474)
+- Docker Hub: [mikelm98/secdelivautoiot](https://hub.docker.com/layers/mikelm98/secdelivautoiot/latest/images/sha256-d75a06ef64cdf2ef69b049c69476cccd8f51c9c2e0e202003da57a76e1bd0970?context=repo)
 
 ### [Documentación de flujos](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/Domumentacion-Flujos)
 - [Etapa 1: Flujo GitOps IoT GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Domumentacion-Flujos/Etapa%201-Flujo%20GitOps%20IoT%20GitLab.md)
