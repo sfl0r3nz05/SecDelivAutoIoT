@@ -34,8 +34,8 @@ Este proyecto pretende automatizar la Integración Continua y el Despliegue Cont
 ### Etapa 1
 En esta primera etapa se define implementa el flujo de CI en el [repositorio de GitLab de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT).
 1. Se analiza el código fuente con SonarQube.
-2. Se registra la imagen en GitLab Container Registry.
+2. Se registra la imagen en Docker Hub.
 3. Se analiza la imagen con Trivy.
 4. Se envía un trigger al [repositorio de GitLab de la configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT).
 
-Una vez enviado el trigger al repositorio de GitLab de configuración, 
+Una vez enviado el trigger al repositorio de GitLab de configuración, se ejecutan los comandos de argocd mediante ssh a la máquina virtual para desplegar la imagen en ArgoCD.
