@@ -22,5 +22,37 @@ Prometheus funciona bien para registrar cualquier serie temporal númerica pura.
 - **Histograma**: toma muestras de observaciones (generalmente cosas como la duración de las solicitudes o el tamaño de las respuestas) y las cuenta en compartimiento configurables. También proporciona una suma de todos los valores observados.
 - **Resumen**: similar a un histograma, un resumen toma muestras de observaciones (generalmente cosas como la duración de solicitudes y el tamaño de las respuestas). Si bien también proporciona un recuento total de las observaciones y una suma de todos los valores observados, calcula cuantiles configurables en una ventana de tiempo deslizante.
 
+***
+# Métricas Flujos 
+## Métricas del repositorio de GitLab
+- Número de commits
+- Ramas
+- Pull requests
+
+## Métricas de flujo de trabajo
+- Duración de cada job del piepline
+- Tiempo de ejecución total
+- Número de construcciones exitosas o fallidas
+
+## Métricas de SonarQube
+- Número de problemas de seguridad detectados
+- Cobertura de pruebas
+
+## Métricas de Docker Hub
+- Número de imágener almacenadas
+- Tamaño total de las imágenes
+
+## Métricas de Trivy
+- Vulnerabilidades detectadas
+
+## Métricas ArgoCD
+- Tiempo de implementación
+- Número de implementaciones exitosas o fallidas
+
+## Métricas de K3s
+- Uso de recursos
+- Escalabilidad
+- Latencia de los pods
+
 ## Referencias
 - Prometheus Docs - [prometheus.io](https://prometheus.io/docs/introduction/overview/)
