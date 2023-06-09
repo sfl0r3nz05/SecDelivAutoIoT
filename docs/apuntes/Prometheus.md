@@ -23,36 +23,50 @@ Prometheus funciona bien para registrar cualquier serie temporal númerica pura.
 - **Resumen**: similar a un histograma, un resumen toma muestras de observaciones (generalmente cosas como la duración de solicitudes y el tamaño de las respuestas). Si bien también proporciona un recuento total de las observaciones y una suma de todos los valores observados, calcula cuantiles configurables en una ventana de tiempo deslizante.
 
 ***
-# Métricas Flujos 
-## Métricas del repositorio de GitLab
+# Métricas Flujos
+## Métricas
+### Métricas del repositorio de GitLab
 - Número de commits
 - Ramas
 - Pull requests
 
-## Métricas de flujo de trabajo
+### Métricas de flujo de trabajo
 - Duración de cada job del piepline
 - Tiempo de ejecución total
 - Número de construcciones exitosas o fallidas
 
-## Métricas de SonarQube
+### Métricas de SonarQube
 - Número de problemas de seguridad detectados
 - Cobertura de pruebas
 
-## Métricas de Docker Hub
+### Métricas de Docker Hub
 - Número de imágener almacenadas
 - Tamaño total de las imágenes
 
-## Métricas de Trivy
+### Métricas de Trivy
 - Vulnerabilidades detectadas
 
-## Métricas ArgoCD
+### Métricas ArgoCD
 - Tiempo de implementación
 - Número de implementaciones exitosas o fallidas
 
-## Métricas de K3s
+### Métricas de K3s
 - Uso de recursos
 - Escalabilidad
 - Latencia de los pods
+
+## ¿Cómo ver las métricas?
+### Interfaz web de Prometheus
+Prometheus proporciona una interfaz web incorporada que te permite explorar y consultar las métricas recolectadas. Por lo general, la URL suele ser `http://localhost:9090`. Desde la interfaz web, puedes escribir consultas de PromQL (Prometheus Query Language) y visualizar los resultados en forma de gráficos y tablas.
+
+### Grafana
+Grafana es una plataforma de visualización de métricas y análisis que se integra bien con Prometheus. Puedes configurar una fuente de datos Prometheus en Grafana y crear paneles y tableros personalizados para visualizar tus métricas de manera más avanzada.
+
+### Herramientas de línea de comandos
+Además de las interfaces web, también puedes utilizar herramientas de línea de comandos para consultar y visualizar las métricas de Prometheus. Por ejemplo, puedes utilizar la herramienta `curl` para realizar consultas a la API de Prometheus y obtener los resultados en formato JSON.
+
+### Integración con otras herramientas
+Prometheus también se puede integrar con otras herramientas de monitoreo y visualización, como Kubernetes Dashboard, que te permiten ver las métricas de tus aplicaciones y clústeres de Kubernetes.
 
 ## Referencias
 - Prometheus Docs - [prometheus.io](https://prometheus.io/docs/introduction/overview/)
