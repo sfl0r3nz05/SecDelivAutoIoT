@@ -47,6 +47,7 @@ stage('sonarqube-check') {
     // Descargar SonarQube en el directorio del workspace
     sh 'curl -o sonarqube.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip'
     sh 'unzip /var/jenkins_home/workspace/SecDelivAutoIoT/sonarqube.zip'
+    // Cambiar el nombre de la carpeta a sonar-scanner
     sh 'mv /var/jenkins_home/workspace/SecDelivAutoIoT/sonar-scanner-4.8.0.2856-linux /var/jenkins_home/workspace/SecDelivAutoIoT/sonar-scanner'
 
     // Ejecutar SonarQube Scanner
