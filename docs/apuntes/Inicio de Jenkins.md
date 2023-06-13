@@ -22,6 +22,52 @@ Al acceder a `localhost:8080` te pide una contraseña de Jenkins. Para saber la 
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
+## Configurar pipeline Jenkins
+Para poder utilizar el archivo `Jenkinsfile` en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG">
+
+## SonarQube
+En mi caso, estoy ejecutando Sonarqube y Jenkins en contenedores distintos en mi host (ya están creados). Entonces lo primero de todo hay que crear el network y añadir Sonarqube y Jenkins a un network de docker:
+```
+docker network create secdelivautoiot
+docker network connect secdelivautoiot jenkins
+docker network connect secdelivautoiot sonarqube
+```
+
+### Configuración global
+`Administrar Jenkins` --> `System` --> `SonarQube servers`:
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Global%20SonarQube.PNG">
+
+### Primera ejecución del pipeline
+Para la primera ejecución del pipeline, hay que descargar sonarqube. Yo he cambiado el nombre a la carpeta de sonarqueb una vez descomprimida para facilitar el nombre a sonar-scanner:
+```
+// Analisis SonarQube
+stage('sonarqube-check') {
+  steps {
+    // Descargar SonarQube en el directorio del workspace
+    sh 'curl -o sonarqube.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip'
+    sh 'unzip /var/jenkins_home/workspace/SecDelivAutoIoT/sonarqube.zip'
+    sh 'mv /var/jenkins_home/workspace/SecDelivAutoIoT/sonar-scanner-4.8.0.2856-linux /var/jenkins_home/workspace/SecDelivAutoIoT/sonar-scanner'
+
+    // Ejecutar SonarQube Scanner
+    withSonarQubeEnv('sonarqube') {
+      sh "/var/jenkins_home/workspace/SecDelivAutoIoT/sonar-scanner/bin/sonar-scanner"
+    }
+  }
+}
+```
+Una vez ejecutado esta primera vez, ya tendremos el workspace configurado para ejecutar lo siguiente a partir de ahora:
+```
+stage('sonarqube-check') {
+  steps {
+    // Ejecutar SonarQube Scanner
+    withSonarQubeEnv('sonarqube') {
+      sh "/var/jenkins_home/workspace/SecDelivAutoIoT/sonar-scanner/bin/sonar-scanner"
+    }
+  }
+}
+```
+
 ## Plugins instalados
 - GitLab Plugin
 - SonarQube Scanner for Jenkins
