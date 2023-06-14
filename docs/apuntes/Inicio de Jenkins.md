@@ -141,6 +141,24 @@ stage('Image Analysis with Trivy') {
 }
 ```
 
+## Desplegar imagen en ArgoCD
+Para poder desplegar la imagen en ArgoCd desde el pipeline de Jenkins, hay que añadir el siguiente stage en el `Jenkinsfile`:
+```
+// Desplegar imagen a ArgoCD de la máquina virtual
+stage('Deploy Image to ArgoCD') {
+  steps {
+    script {
+      docker.image('ubuntu:latest').inside {
+        sh 'apt-get update && apt-get install -y openssh-client sshpass'
+        sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd login localhost:32261 --insecure --username $ARGOCD_USERNAME --password $ARGOCD_PASSWORD"'
+        sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app create secdelivautoiot --repo https://gitlab.com/mikel-m/SecDelivAutoIoT.git --path kubernetes --dest-server https://kubernetes.default.svc --dest-namespace secdelivautoiot"'
+        sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app sync secdelivautoiot"'
+      }
+    }
+  }
+}
+```
+
 ## Plugins instalados
 - GitLab Plugin
 - SonarQube Scanner for Jenkins
