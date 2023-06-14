@@ -33,7 +33,7 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 ## Configurar pipeline Jenkins
-Para poder utilizar el archivo `Jenkinsfile` en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
+Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG">
 
 ## SonarQube
