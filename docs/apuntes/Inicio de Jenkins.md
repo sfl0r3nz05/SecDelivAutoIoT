@@ -158,6 +158,7 @@ stage('Deploy Image to ArgoCD') {
   }
 }
 ```
+Para añadir las variables de entorno, `Administrar Jenkins` --> `System` y buscar el apartado de `Propiedades globales` y activar la opción `Variables de entorno`. Se despliega una lista y ahí puedes añadir el nombre de la variable y el valor.
 
 ## Plugins instalados
 - GitLab Plugin
