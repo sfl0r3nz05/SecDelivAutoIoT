@@ -105,6 +105,42 @@ stage('Build and Publish Image to Docker Hub') {
 }
 ```
 
+## Analisis con Trivy
+Al igual que hicimos anteriormente con docker, aquí también tenemos que instalar trivy en el contenedor de jenkins. Para ello, ejecutamos el de nuevo el siguiente comando en Visual Studio Code para acceder al contenedor:
+```
+docker exec -it -u 0 jenkins bash
+```
+Una vez dentro, ejecutamos los siguientes comandos pra instalar trivy:
+```
+apt-get update
+apt-get install -y wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | tee -a /etc/apt/sources.list.d/trivy.list
+apt-get update
+apt-get install -y trivy
+```
+Una vez instalado, hay que añadir el siguiente stage para analizar la imagen con trivy:
+```
+// Analisis de imagen de Docker Hub con Trivy
+stage('Image Analysis with Trivy') {
+  steps {
+    script {
+      def imageName = 'mikelm98/secdelivautoiot:latest'
+      def trivyReport = 'trivy-report.json'
+                    
+      // Descargar la imagen desde Docker Hub
+      docker.image(imageName).pull()
+                    
+      // Ejecutar el escaneo de Trivy en la imagen
+      sh "trivy image ${imageName} --format json --output ${trivyReport}"
+                    
+      // Publicar el informe de Trivy como artefacto en Jenkins
+      archiveArtifacts artifacts: trivyReport, onlyIfSuccessful: false
+    }
+  }
+}
+```
+
 ## Plugins instalados
 - GitLab Plugin
 - SonarQube Scanner for Jenkins
