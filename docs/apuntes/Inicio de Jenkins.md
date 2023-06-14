@@ -52,7 +52,7 @@ docker network connect secdelivautoiot sonarqube
 Para la primera ejecución del pipeline, hay que descargar sonarqube. Yo he cambiado el nombre a la carpeta de sonarqueb una vez descomprimida para facilitar el nombre a sonar-scanner:
 ```
 // Analisis SonarQube
-stage('sonarqube-check') {
+stage('Analysis with SonarQube') {
   steps {
     // Descargar SonarQube en el directorio del workspace
     sh 'curl -o sonarqube.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip'
@@ -69,7 +69,8 @@ stage('sonarqube-check') {
 ```
 Una vez ejecutado esta primera vez, ya tendremos el workspace configurado para ejecutar lo siguiente a partir de ahora:
 ```
-stage('sonarqube-check') {
+// Analisis SonarQube
+stage('Analysis with SonarQube') {
   steps {
     // Ejecutar SonarQube Scanner
     withSonarQubeEnv('sonarqube') {
