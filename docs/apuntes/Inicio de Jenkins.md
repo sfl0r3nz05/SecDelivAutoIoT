@@ -80,7 +80,17 @@ stage('sonarqube-check') {
 ```
 
 ## Push Docker Hub
-Para poder contruir y pushear una imagen a Docker Hub, tenemos que descargar los plugins de `Docker` y `Docker pipeline`. Una vez hecho esto, Tenmos que añadir el siguiente stage al archivo `Jenkinsfile`:
+Lo primero de todo, tenemos que instalar docker en el contenedor de Jenkins. Para eso, ejecutamos el siguiente comando para acceder al contenedor desde Visual Studio Code:
+```
+docker exec -it -u 0 jenkins bash
+```
+Una vez dentro del contenedor instalamos docker con los siguientes comandos:
+```
+apt-get update
+apt-get install -y docker.io
+```
+
+Una vez instalado docker en el contenedor de Jenkins, para poder contruir y pushear una imagen a Docker Hub, tenemos que descargar los plugins de `Docker` y `Docker pipeline`. También hay que añadir las credenciales de Docker Hub con el usuario y contraseña. Una vez hecho esto, tenemos que añadir el siguiente stage al archivo `Jenkinsfile`:
 ```
 stage('Build and Publish Image to Docker Hub') {
   steps {
