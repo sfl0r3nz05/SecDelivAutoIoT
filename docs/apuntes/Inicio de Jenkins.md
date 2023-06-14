@@ -110,3 +110,6 @@ stage('Build and Publish Image to Docker Hub') {
 - SonarQube Scanner for Jenkins
 - Docker Pipeline
 - Docker
+
+# Referencias
+- Docker Pipeline plugin - [docs.cloudbees.com](https://docs.cloudbees.com/docs/cloudbees-ci/latest/pipelines/docker-workflow)
