@@ -9,6 +9,16 @@ Una vez descargada la imagen Docker de Jenkins, se ejecuta el siguiente comando 
 ```
 docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins
 ```
+Con socket docker:
+```
+docker run -d \
+  -p 8080:8080 \
+  -v jenkins_home:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -u root \
+  --name jenkins \
+  jenkins/jenkins:lts
+```
 
 ### Cambio de nombre del conetenedor
 Al iniciar el contenedor, el nombre del contenedor es `charming_mayer`. Entonces para cambiar el nombre del contenedor a `jenkins` ejecutar el siguiente comando:
@@ -69,9 +79,23 @@ stage('sonarqube-check') {
 }
 ```
 
+## Push Docker Hub
+Para poder contruir y pushear una imagen a Docker Hub, tenemos que descargar los plugins de `Docker` y `Docker pipeline`. Una vez hecho esto, Tenmos que añadir el siguiente stage al archivo `Jenkinsfile`:
+```
+stage('Build and Publish Image to Docker Hub') {
+  steps {
+    script {
+      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+        git 'https://gitlab.com/mikel-m/SecDelivAutoIoT.git'
+        docker.build('mikelm98/secdelivautoiot').push('latest')
+      }
+    }
+  }
+}
+```
+
 ## Plugins instalados
 - GitLab Plugin
 - SonarQube Scanner for Jenkins
-- Slack Notification
 - Docker Pipeline
 - Docker
