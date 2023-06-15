@@ -14,6 +14,9 @@
 - [Métricas de monitorización](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/M%C3%A9tricas%20de%20monitorizaci%C3%B3n.md)
 - [Repositorio con apuntes propios](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/apuntes)
 
+### Guías
+- [Repositorio con las guías](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/guias)
+
 ### Repositorios de GitLab
 - [Repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT)
 - [Repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT)
