@@ -67,3 +67,6 @@ docker-compose up -d
 ```
 
 Para acceder a Prometheus, hay que introducir `http://localhost:9090/` en el navegador. Y para acceder a Grafana, hay que introducir `http://localhost:3000/` en el navegador.
+
+## Inicio de Grafana
+Lo primero, hay que iniciar sesión en Grafana. Para ello hay que introducir el usuario y la contraseña `admin/admin`. Una vez que se haya iniciado sesión, hay que agregar un nuevo panel de Grafana haciendo clic en el botón "+" (icono en la parte superior) y seleccionando "Panel vacío".
