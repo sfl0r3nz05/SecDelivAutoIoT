@@ -79,7 +79,7 @@ stage('Analysis with SonarQube') {
 Lo primero de todo, tenemos que instalar docker en el contenedor de Jenkins. Para eso, ejecutamos el siguiente comando para acceder al contenedor desde Visual Studio Code:
 ```powershell
 docker exec -it -u 0 jenkins bash
-```powershell
+```
 Una vez dentro del contenedor instalamos docker con los siguientes comandos:
 ```powershell
 apt-get update
