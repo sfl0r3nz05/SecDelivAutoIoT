@@ -37,5 +37,8 @@ Al ejecutar estos comando, comprobamos que todo ha ido correcto accediendo a [ht
 3. Se abrirá un menú de configuración del data source de prometheus y tenemos que completar el campo de "Prometheus server URL" con `http://172.19.0.1:9090`. Si al clickar en `Save & test` sale el mensaje `Successfully queried the Prometheus API.` es que la conexión se ha realizado correctamente.
 4. En la parte superior de Grafana clickameo en el icono `+` y `Import dashboard`. Ahí, en el campo "Import via grafana.com" introducimos el ID del dashboard que queremos importar, en nuestro caso: `9964` y después cliclamos en `Load`. En el campo "Prometheus" se abre un desplegable y seleccionamos `Prometheus` y hacemos click en `Import`.
 
-una vez configurado, se nos abre el dashboard:
+Una vez configurado, se nos abre el dashboard:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Jenkins-Dashboard-1.PNG" alt="Primer dashboard de Jenkins">
+
+Después de algunas ejecuciones del pipeline de Jenkins ([guía para configurar Jenkis](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Jenkins.md)) podemos ver los siguientes cambios en el dashboard para ver que obtiene métricas de Jenkin:
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Jenkins-Dashboard-2.PNG" alt="Segundo dashboard de Jenkins">
