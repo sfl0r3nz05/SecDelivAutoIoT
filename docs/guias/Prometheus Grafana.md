@@ -145,13 +145,13 @@ f2071a0fb1bf   quay.io/mvisonneau/gitlab-ci-pipelines-exporter:v0.5.5   "/usr/lo
 ```
 
 Si entras en [http://localhost:9090/targets](http://localhost:9090/targets) tendría que salir algo así:
-<br>************ INSERTAR CAPTURA ************
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Prometheus-targets.PNG" alt="http://localhost:9090/targets">
 
 Y para acceder al dashboard del pipeline de grafana, tienes que acceder a [http://localhost:3000/d/gitlab_ci_pipelines](http://localhost:3000/d/gitlab_ci_pipelines) y tendría que salir algo así:
-<br>************ INSERTAR CAPTURA ************
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Prometheus-gitlab_ci_pipelines.PNG" alt="http://localhost:3000/d/gitlab_ci_pipelines">
 
 Si se quiere acceder al dashboard de los jobs, tienes que acceder a [http://localhost:3000/d/gitlab_ci_jobs](http://localhost:3000/d/gitlab_ci_jobs) y tendría que salir algo así:
-<br>************ INSERTAR CAPTURA ************
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Prometheus-gitlab_ci_jobs.PNG" alt="http://localhost:3000/d/gitlab_ci_jobs">
 
 ## Referencias
 - Example usage of gitlab-ci-pipelines-exporter with Prometheus & Grafana - [github.com](https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/tree/main/examples/quickstart)
