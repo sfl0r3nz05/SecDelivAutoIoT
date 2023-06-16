@@ -2,7 +2,7 @@
 ## Configuración inicial
 Lo primero de todo es poner en marcha los conteneodres de Jenkins, Prometheus y Grafana. En nuestro caso, vamos a añadir diferentes puertos a los contenedores ya que estamos utilizando los puertos en otro proyecto:
 ```powershell
-docker run -d --name jenkins -p 8083:8080 -p 50001:50000 jenkins/jenkins:latest
+docker run -d --name jenkins -p 8081:8080 -p 50000:50000 jenkins/jenkins:latest
 docker run -d --name prometheus -p 9091:9090 prom/prometheus
 docker run -d --name grafana -p 3001:3000 grafana/grafana
 ```
@@ -21,7 +21,7 @@ tee -a /etc/prometheus/prometheus.yml <<EOF
   - job_name: jenkins
     metrics_path: /prometheus
     static_configs:
-      - targets: ['172.17.0.1:8083']
+      - targets: ['172.17.0.1:8081']
 EOF
 
 docker restart prometheus
