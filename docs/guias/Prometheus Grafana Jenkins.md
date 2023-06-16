@@ -26,7 +26,7 @@ EOF
 
 docker restart prometheus
 ```
-La ip `172.17.0.1` es la ip del gateway del network bridge y el puerto `8083` es el puerto de jenkins (`docker network inspect bridge`).
+La ip `172.17.0.1` es la ip del gateway del network bridge y el puerto `8081` es el puerto de jenkins (`docker network inspect bridge`). Si se está utilizando otro network de docker, hay que ejecutar el comando `docker network inspect <nombre-network>` y mirar la ip del gateway del network.
 
 Al ejecutar estos comando, comprobamos que todo ha ido correcto accediendo a [http://localhost:9090/targets](http://localhost:9090/targets):
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Jenkins-Prometheus-targets.PNG" alt="http://localhost:9090/targets">
