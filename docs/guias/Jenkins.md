@@ -1,34 +1,29 @@
 # Jenkins
 ## Instalación
-En Visual Studio Code he ejecutado el siguiente comando para descargar la imagen Docker de Jenkins:
-```
-docker pull jenkins/jenkins
-```
-
-Una vez descargada la imagen Docker de Jenkins, se ejecuta el siguiente comando para ejecutar la imagen en un contenedor Docker:
-```
-docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins
-```
-Con socket docker:
-```
+Lo primero que hay que hacer es generar el contenedor de jenkins con socket docker, para poder generar imágenes docker y poder subirlo a Docker Hub:
+```powershell
 docker run -d \
   -p 8080:8080 \
   -v jenkins_home:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -u root \
   --name jenkins \
-  jenkins/jenkins:lts
+  jenkins/jenkins:latest
+```
+O también de esta forma (lo mismo que el comando de arriba):
+```powershell
+docker run -d -p 8080:8080 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -u root --name jenkins jenkins/jenkins:latest
 ```
 
-### Cambio de nombre del conetenedor
+### Cambio de nombre del conetenedor (opcional)
 Al iniciar el contenedor, el nombre del contenedor es `charming_mayer`. Entonces para cambiar el nombre del contenedor a `jenkins` ejecutar el siguiente comando:
-```
+```powershell
 docker rename charming_mayer jenkins
 ```
 
 ## Primeros pasos de Jenkins
 Al acceder a `localhost:8080` te pide una contraseña de Jenkins. Para saber la contraseña, hay que ejecutar lo siguiente para poder acceder a la contraseña dentro del contenedor:
-```
+```powershell
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
@@ -38,7 +33,7 @@ Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pip
 
 ## SonarQube
 En mi caso, estoy ejecutando Sonarqube y Jenkins en contenedores distintos en mi host (ya están creados). Entonces lo primero de todo hay que crear el network y añadir Sonarqube y Jenkins a un network de docker:
-```
+```powershell
 docker network create secdelivautoiot
 docker network connect secdelivautoiot jenkins
 docker network connect secdelivautoiot sonarqube
@@ -82,11 +77,11 @@ stage('Analysis with SonarQube') {
 
 ## Push Docker Hub
 Lo primero de todo, tenemos que instalar docker en el contenedor de Jenkins. Para eso, ejecutamos el siguiente comando para acceder al contenedor desde Visual Studio Code:
-```
+```powershell
 docker exec -it -u 0 jenkins bash
-```
+```powershell
 Una vez dentro del contenedor instalamos docker con los siguientes comandos:
-```
+```powershell
 apt-get update
 apt-get install -y docker.io
 ```
@@ -107,11 +102,11 @@ stage('Build and Publish Image to Docker Hub') {
 
 ## Analisis con Trivy
 Al igual que hicimos anteriormente con docker, aquí también tenemos que instalar trivy en el contenedor de jenkins. Para ello, ejecutamos el de nuevo el siguiente comando en Visual Studio Code para acceder al contenedor:
-```
+```powershell
 docker exec -it -u 0 jenkins bash
 ```
 Una vez dentro, ejecutamos los siguientes comandos pra instalar trivy:
-```
+```powershell
 apt-get update
 apt-get install -y wget apt-transport-https gnupg lsb-release
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-key add -
