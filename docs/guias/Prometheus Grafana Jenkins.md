@@ -1,4 +1,4 @@
-# Configuración Prometheus y Grafana (GitLab)
+# Configuración Prometheus y Grafana (Jenkins)
 ## Configuración inicial
 Lo primero de todo es poner en marcha los conteneodres de Jenkins, Prometheus y Grafana. En nuestro caso, vamos a añadir diferentes puertos a los contenedores ya que estamos utilizando los puertos en otro proyecto:
 ```powershell
