@@ -43,6 +43,7 @@ Una vez configurado, se nos abre el dashboard:
 Después de algunas ejecuciones del pipeline de Jenkins ([guía para configurar Jenkis](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Jenkins.md)) podemos ver los siguientes cambios en el dashboard para ver que obtiene métricas de Jenkin:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Jenkins-Dashboard-2.PNG" alt="Segundo dashboard de Jenkins">
 
+***
 ## Cambiar visualización de métricas en Grafana
 En nuestro pipeline de Jenkins, tenemos 4 stages que queremos monitorizar el tiempo de ejecución:
 - Analysis with SonarQube
