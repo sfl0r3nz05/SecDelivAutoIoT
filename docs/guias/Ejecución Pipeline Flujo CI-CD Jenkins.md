@@ -1,5 +1,5 @@
 # Flujo CI/CD Jenkins
-## Instalación
+## Instalación de jenkins
 Lo primero que hay que hacer es generar el contenedor de jenkins con socket docker, para poder generar imágenes docker y poder subirlo a Docker Hub:
 ```powershell
 docker run -d \
