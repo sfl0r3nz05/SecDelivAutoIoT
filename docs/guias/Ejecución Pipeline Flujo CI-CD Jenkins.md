@@ -15,12 +15,6 @@ O también de esta forma (lo mismo que el comando de arriba):
 docker run -d -p 8080:8080 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock -u root --name jenkins jenkins/jenkins:latest
 ```
 
-### Cambio de nombre del conetenedor (opcional)
-Al iniciar el contenedor, el nombre del contenedor es `charming_mayer`. Entonces para cambiar el nombre del contenedor a `jenkins` ejecutar el siguiente comando:
-```powershell
-docker rename charming_mayer jenkins
-```
-
 ## Primeros pasos de Jenkins
 Al acceder a `localhost:8080` te pide una contraseña de Jenkins. Para saber la contraseña, hay que ejecutar lo siguiente para poder acceder a la contraseña dentro del contenedor:
 ```powershell
