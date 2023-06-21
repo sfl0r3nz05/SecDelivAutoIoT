@@ -27,7 +27,10 @@ Al acceder a `localhost:8080` te pide una contraseña de Jenkins. Para saber la 
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-## Configurar pipeline Jenkins
+## Crear Pipeline Jenkins
+En el menú principal de Jenkins, hay que clickar en `Nueva tarea` en el menú de la izquierda. Se mostrará un nuevo menú con diferentes opciones, introduces el nombre que quieras dar al pipeline y seleccionas `Pipeline` y le das a `OK`. Una vez hecho esto, ya está listo el pipeline para la configuración.
+
+## Configurar Pipeline Jenkins
 Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG">
 
