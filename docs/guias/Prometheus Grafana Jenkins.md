@@ -42,3 +42,23 @@ Una vez configurado, se nos abre el dashboard:
 
 Después de algunas ejecuciones del pipeline de Jenkins ([guía para configurar Jenkis](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Jenkins.md)) podemos ver los siguientes cambios en el dashboard para ver que obtiene métricas de Jenkin:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Jenkins-Dashboard-2.PNG" alt="Segundo dashboard de Jenkins">
+
+## Cambiar visualización de métricas en Grafana
+En nuestro pipeline de Jenkins, tenemos 4 stages que queremos monitorizar el tiempo de ejecución:
+- Analysis with SonarQube
+- Build and Publish Image to Docker Hub
+- Image Analysis with Trivy
+- Deploy Image to ArgoCD
+
+Esto es un ejemplo pero se puede ajustar a cualquier métrica que queramos monitorizar. Para poder visualizar el tiempo de ejecución de cada stage en Grafana, editamos un panel del dashboard (`...` --> `Edit`). Se abrirá la configuración del panel. En nuestro caso, las métricas que recibimos del tiempo de duración del job está en milisegundos, por lo que tenemos que tenemos que añadir una expresión (botón `+ Expression`) y añadimos la expresión de las métricas que queremos visualizar. En nuestro caso, para especificar el stage tenemos que añadir las opciones "stage" y "jenkins_job" especificando su valor y dividiéndolo por 1000 para obtener los segundos como se muestra en la imagen:
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Expresion%20Grafana.PNG" alt="Expression de Grafana">
+
+Para mostrar en formato hh:mm:ss, en el menú de la derecha, hay que buscar `Standard options` --> `Unit` y cambiar el valor por `Time` --> `duration (hh:mm:ss)`.
+
+Para cambiar el tipo de visualización, en el menú de la derecha en la parte superior hay un desplegable (en mi caso pone "stat"), al desplegarlo clicka en `Suggestions` y selecciona el que más te guste.
+
+Esta sería la captura completa de la configuración del panel (en este caso el análisis de SonarQube pero el resto de los stages sería igual):
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuracion%20Panel%20Grafana.PNG" alt="Configuración del panel de Grafana">
+
+Resultado final:
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Dashboard%20Completo%20Grafana.PNG" alt="Dashboard completo de Grafana">
