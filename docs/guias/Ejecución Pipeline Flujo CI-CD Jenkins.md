@@ -134,6 +134,10 @@ stage('Image Analysis with Trivy') {
 ```
 
 ## Desplegar imagen en ArgoCD
+```powershell
+apt-get update && apt-get install -y git
+```
+
 Para poder desplegar la imagen en ArgoCd desde el pipeline de Jenkins, hay que añadir el siguiente stage en el `Jenkinsfile`:
 ```
 // Desplegar imagen a ArgoCD de la máquina virtual
