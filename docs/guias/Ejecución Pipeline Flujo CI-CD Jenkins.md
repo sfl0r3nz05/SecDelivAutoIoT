@@ -104,6 +104,32 @@ stage('Build and Publish Image to Docker Hub') {
 }
 ```
 
+### Instalar docker.io desde Jenkinsfile
+Otra forma de instalar docker.io sería desde el propio jenkinsfile. Para eso añadimos el siguiente stage:
+```
+// Build and Push image to Docker Hub
+stage('Build and Publish Image to Docker Hub') {
+    steps {
+        script {
+            // Instalar docker.io en el contenedor Jenkins
+            sh 'apt-get update && apt-get install -y docker.io'
+            
+            // Obtener el tag de GitLab
+            def commitHash = sh(returnStdout: true, script: "git ls-remote https://gitlab.com/mikel-m/SecDelivAutoIoT.git HEAD | awk '{print \$1}'").trim()
+            def CI_COMMIT_SHORT_SHA = commitHash.substring(0, 8)
+            echo "Commit SHA: ${CI_COMMIT_SHORT_SHA}"
+
+            docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                git 'https://gitlab.com/mikel-m/SecDelivAutoIoT.git'
+                def image = docker.build("mikelm98/secdelivautoiot:${CI_COMMIT_SHORT_SHA}")
+                image.push()
+            }
+        }
+    }
+}
+```
+Un inconveniente que tiene esta forma es que cada vez que se ejecute Jenkinsfile, se intentará descargar docker.io en el contenedor Jenkins aunque ya esté instalado.
+
 ## Analisis con Trivy
 Al igual que hicimos anteriormente con docker, aquí también tenemos que instalar trivy en el contenedor de jenkins. Para ello, ejecutamos el de nuevo el siguiente comando en Visual Studio Code para acceder al contenedor:
 ```powershell
@@ -146,14 +172,43 @@ stage('Image Analysis with Trivy') {
 }
 ```
 
-## Desplegar imagen en ArgoCD
-Al igual que en el paso de generar la imagen docker, tenemos que acceder al contenedor de Jenkins e instalar `git`:
-```powershell
-docker exec -it -u 0 jenkins bash
-apt-get update && apt-get install -y git
+### Instalar trivy desde Jenkinsfile
+Al igual que en el paso de docker, se puede instalar trivy directamente desde el Jenkinsfile si necesidad de acceder al contenedor de Jenkins:
+```
+// Analisis de imagen de Docker Hub con Trivy
+stage('Image Analysis with Trivy') {
+    steps {
+        script {
+            // Instalar trivy en el contenedor Jenkins
+            sh 'apt-get update && apt-get install -y wget apt-transport-https gnupg lsb-release'
+            sh 'wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-key add -'
+            sh 'echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | tee -a /etc/apt/sources.list.d/trivy.list'
+            sh 'apt-get update && apt-get install -y trivy'
+
+            // Obtener el tag de GitLab
+            def commitHash = sh(returnStdout: true, script: "git ls-remote https://gitlab.com/mikel-m/SecDelivAutoIoT.git HEAD | awk '{print \$1}'").trim()
+            def CI_COMMIT_SHORT_SHA = commitHash.substring(0, 8)
+            echo "Commit SHA: ${CI_COMMIT_SHORT_SHA}"
+
+            // definir la imagen de Docker Hub
+            def imageName = "mikelm98/secdelivautoiot:${CI_COMMIT_SHORT_SHA}"
+            def trivyReport = 'trivy-report.json'
+            
+            // Descargar la imagen desde Docker Hub
+            docker.image(imageName).pull()
+            
+            // Ejecutar el escaneo de Trivy en la imagen
+            sh "trivy image ${imageName} --format json --output ${trivyReport}"
+            
+            // Publicar el informe de Trivy como artefacto en Jenkins
+            archiveArtifacts artifacts: trivyReport, onlyIfSuccessful: false
+        }
+    }
+}
 ```
 
-Una vez instalado, para poder desplegar la imagen en ArgoCd desde el pipeline de Jenkins, hay que añadir el siguiente stage en el `Jenkinsfile`:
+## Desplegar imagen en ArgoCD
+Para desplegar la imagen en ArgoCd, simplemente hay que añadir el siguiente stage al Jenkinsfile:
 ```
 // Desplegar imagen a ArgoCD de la máquina virtual
 stage('Deploy Image to ArgoCD') {
@@ -175,13 +230,16 @@ stage('Deploy Image to ArgoCD') {
                 sh 'cat kubernetes/secdelivautoiot-deployment.yaml | grep "image:"'
 
                 // Configurar el usuario y el correo de Git
-                sh 'git config --global user.name $GITLAB_USER_LOGIN'
-                sh 'git config --global user.email $GITLAB_USER_EMAIL'
-
-                // Hacer commit y push de los cambios
-                sh "git add --all"
-                sh "git commit -m 'Update image tag $IMAGE_TAG'"
-                sh "git push https://$GITLAB_USER_LOGIN:$PERSONAL_TOKEN@gitlab.com/mikel-m/configSecDelivAutoIoT.git HEAD:main -o ci.skip"
+                sh '''
+                    CHANGES=$(git status --porcelain | wc -l)
+                    if [ "$CHANGES" -gt "0" ]; then
+                        git config --global user.name $GITLAB_USER_LOGIN
+                        git config --global user.email $GITLAB_USER_EMAIL
+                        git add --all
+                        git commit -m 'Update image tag $IMAGE_TAG'
+                        git push https://$GITLAB_USER_LOGIN:$PERSONAL_TOKEN@gitlab.com/mikel-m/configSecDelivAutoIoT.git HEAD:main -o ci.skip
+                    fi
+                '''
 
                 // Realizar acciones ArgoCD
                 sh 'apt-get update && apt-get install -y openssh-client sshpass'
