@@ -134,26 +134,55 @@ stage('Image Analysis with Trivy') {
 ```
 
 ## Desplegar imagen en ArgoCD
+Al igual que en el paso de generar la imagen docker, tenemos que acceder al contenedor de Jenkins e instalar `git`:
 ```powershell
+docker exec -it -u 0 jenkins bash
 apt-get update && apt-get install -y git
 ```
 
-Para poder desplegar la imagen en ArgoCd desde el pipeline de Jenkins, hay que añadir el siguiente stage en el `Jenkinsfile`:
+Una vez instalado, para poder desplegar la imagen en ArgoCd desde el pipeline de Jenkins, hay que añadir el siguiente stage en el `Jenkinsfile`:
 ```
 // Desplegar imagen a ArgoCD de la máquina virtual
 stage('Deploy Image to ArgoCD') {
-  steps {
-    script {
-      docker.image('ubuntu:latest').inside {
-        sh 'apt-get update && apt-get install -y openssh-client sshpass'
-        sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd login localhost:32261 --insecure --username $ARGOCD_USERNAME --password $ARGOCD_PASSWORD"'
-        sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app create secdelivautoiot --repo https://gitlab.com/mikel-m/SecDelivAutoIoT.git --path kubernetes --dest-server https://kubernetes.default.svc --dest-namespace secdelivautoiot"'
-        sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app sync secdelivautoiot"'
-      }
+    steps {
+        script {
+            // Obtener el hash del último commit en GitLab
+            def commitHash = sh(returnStdout: true, script: "git ls-remote https://gitlab.com/mikel-m/SecDelivAutoIoT.git HEAD | awk '{print \$1}'").trim()
+            def CI_COMMIT_SHORT_SHA = commitHash.substring(0, 8)
+            echo "Commit SHA: ${CI_COMMIT_SHORT_SHA}"
+            def IMAGE_TAG = "mikelm98/secdelivautoiot:${CI_COMMIT_SHORT_SHA}"
+            echo "IMAGE TAG: ${IMAGE_TAG}"
+
+            // Configurar credenciales de Git
+            withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', usernameVariable: 'GITLAB_USER_LOGIN', passwordVariable: 'PERSONAL_TOKEN')]) {
+                // Clonar el repositorio GitLab
+                git branch: 'main', credentialsId: 'gitlab-credentials', url: 'https://gitlab.com/mikel-m/configSecDelivAutoIoT.git'
+
+                // Actualizar el archivo de despliegue
+                sh "sed -i 's|image:.*|image: $IMAGE_TAG|g' kubernetes/secdelivautoiot-deployment.yaml"
+                sh 'cat kubernetes/secdelivautoiot-deployment.yaml | grep "image:"'
+
+                // Configurar el usuario y el correo de Git
+                sh 'git config --global user.name $GITLAB_USER_LOGIN'
+                sh 'git config --global user.email $GITLAB_USER_EMAIL'
+
+                // Hacer commit y push de los cambios
+                sh "git add --all"
+                sh "git commit -m 'Update image tag $IMAGE_TAG'"
+                sh "git push https://$GITLAB_USER_LOGIN:$PERSONAL_TOKEN@gitlab.com/mikel-m/configSecDelivAutoIoT.git HEAD:main -o ci.skip"
+
+                // Realizar acciones ArgoCD
+                sh 'apt-get update && apt-get install -y openssh-client sshpass'
+                sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd login localhost:32261 --insecure --username $ARGOCD_USERNAME --password $ARGOCD_PASSWORD"'
+                sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app create secdelivautoiot --repo https://gitlab.com/mikel-m/configSecDelivAutoIoT.git --path kubernetes --dest-server https://kubernetes.default.svc --dest-namespace secdelivautoiot"'
+                sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app sync secdelivautoiot"'
+            }
+        }
     }
-  }
 }
 ```
+Donde `gitlab-credentials` es el usuario de GitLab y un Token de Acceso de GitLab donde el rol del token tiene que ser como mínimo "Developer". Y la variable `PERSONAL_TOKEN` es el mismo token de acceso que el de las credenciales de GitLab.
+
 Para añadir las variables de entorno, `Administrar Jenkins` --> `System` y buscar el apartado de `Propiedades globales` y activar la opción `Variables de entorno`. Se despliega una lista y ahí puedes añadir el nombre de la variable y el valor.
 
 ## Plugins instalados
