@@ -85,15 +85,22 @@ apt-get install -y docker.io
 
 Una vez instalado docker en el contenedor de Jenkins, para poder contruir y pushear una imagen a Docker Hub, tenemos que descargar los plugins de `Docker` y `Docker pipeline`. También hay que añadir las credenciales de Docker Hub con el usuario y contraseña. Una vez hecho esto, tenemos que añadir el siguiente stage al archivo `Jenkinsfile`:
 ```
+// Build and Push image to Docker Hub
 stage('Build and Publish Image to Docker Hub') {
-  steps {
-    script {
-      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-        git 'https://gitlab.com/mikel-m/SecDelivAutoIoT.git'
-        docker.build('mikelm98/secdelivautoiot').push('latest')
-      }
+    steps {
+        script {
+            // Obtener el tag de GitLab
+            def commitHash = sh(returnStdout: true, script: "git ls-remote https://gitlab.com/mikel-m/SecDelivAutoIoT.git HEAD | awk '{print \$1}'").trim()
+            def CI_COMMIT_SHORT_SHA = commitHash.substring(0, 8)
+            echo "Commit SHA: ${CI_COMMIT_SHORT_SHA}"
+
+            docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                git 'https://gitlab.com/mikel-m/SecDelivAutoIoT.git'
+                def image = docker.build("mikelm98/secdelivautoiot:${CI_COMMIT_SHORT_SHA}")
+                image.push()
+            }
+        }
     }
-  }
 }
 ```
 
@@ -115,21 +122,27 @@ Una vez instalado, hay que añadir el siguiente stage para analizar la imagen co
 ```
 // Analisis de imagen de Docker Hub con Trivy
 stage('Image Analysis with Trivy') {
-  steps {
-    script {
-      def imageName = 'mikelm98/secdelivautoiot:latest'
-      def trivyReport = 'trivy-report.json'
-                    
-      // Descargar la imagen desde Docker Hub
-      docker.image(imageName).pull()
-                    
-      // Ejecutar el escaneo de Trivy en la imagen
-      sh "trivy image ${imageName} --format json --output ${trivyReport}"
-                    
-      // Publicar el informe de Trivy como artefacto en Jenkins
-      archiveArtifacts artifacts: trivyReport, onlyIfSuccessful: false
+    steps {
+        script {
+            // Obtener el tag de GitLab
+            def commitHash = sh(returnStdout: true, script: "git ls-remote https://gitlab.com/mikel-m/SecDelivAutoIoT.git HEAD | awk '{print \$1}'").trim()
+            def CI_COMMIT_SHORT_SHA = commitHash.substring(0, 8)
+            echo "Commit SHA: ${CI_COMMIT_SHORT_SHA}"
+
+            // definir la imagen de Docker Hub
+            def imageName = "mikelm98/secdelivautoiot:${CI_COMMIT_SHORT_SHA}"
+            def trivyReport = 'trivy-report.json'
+            
+            // Descargar la imagen desde Docker Hub
+            docker.image(imageName).pull()
+            
+            // Ejecutar el escaneo de Trivy en la imagen
+            sh "trivy image ${imageName} --format json --output ${trivyReport}"
+            
+            // Publicar el informe de Trivy como artefacto en Jenkins
+            archiveArtifacts artifacts: trivyReport, onlyIfSuccessful: false
+        }
     }
-  }
 }
 ```
 
@@ -149,7 +162,6 @@ stage('Deploy Image to ArgoCD') {
             // Obtener el hash del último commit en GitLab
             def commitHash = sh(returnStdout: true, script: "git ls-remote https://gitlab.com/mikel-m/SecDelivAutoIoT.git HEAD | awk '{print \$1}'").trim()
             def CI_COMMIT_SHORT_SHA = commitHash.substring(0, 8)
-            echo "Commit SHA: ${CI_COMMIT_SHORT_SHA}"
             def IMAGE_TAG = "mikelm98/secdelivautoiot:${CI_COMMIT_SHORT_SHA}"
             echo "IMAGE TAG: ${IMAGE_TAG}"
 
