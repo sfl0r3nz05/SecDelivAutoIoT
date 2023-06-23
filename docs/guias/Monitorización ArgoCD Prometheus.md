@@ -2,9 +2,9 @@
 ## Instalar Argocd
 En mi caso, ya tenía instalado Argocd siguiendo esta [guía de instalación de ArgoCD](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/apuntes/Comandos%20ArgoCD.md).
 
-Lo primero será desplegar la aplicación `workshop` en ArgoCD ejecutando el siguiente comando:
+## Vincular un repositorio principal a ArgoCD
+ArgoCD usa la información de source y destination para monitorear continuamente el repositorio de Git en busca de cambios e implementarlos en el entorno de destino. Pongámoslo en acción aplicando los cambios:
 ```powershell
-cat <<EOF | kubectl apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -20,9 +20,7 @@ spec:
     repoURL: https://github.com/naturalett/continuous-delivery
     targetRevision: main
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    automated: {}
 EOF
 ```
 Si da un error a la hora de ejecutarlo como el siguiente:
@@ -34,7 +32,17 @@ Hay que ejecutar el siguiente comando y después ejecutar nuevamente el primer c
 ```powershell
 sudo chmod +r /etc/rancher/k3s/k3s.yaml
 ```
-Una vez desplegado la aplicación workshop, accede a la interfaz de ArgoCD para comprobar el despliegue de la aplicación o ejecuta el siguiente comando para 
+Accedamos a la interfaz de usuario del servidor mediante el reenvío de puertos kubectl:
+```powershell
+kubectl port-forward service/argocd-server -n argocd 8080:443
+```
+
+## Instalar Prometheus a través de ArgoCD
+Lo primero de todo, hay que instalar Prometheus. Para eso, hay que ejecutar lo siguiente:
+```powershell
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+```
 
 ## Referencias
 - Deploying Prometheus and Grafana as Applications Using ArgoCD — Including Dashboards - [dzone.com](https://dzone.com/articles/deploying-prometheus-and-grafana-as-applications-u)
