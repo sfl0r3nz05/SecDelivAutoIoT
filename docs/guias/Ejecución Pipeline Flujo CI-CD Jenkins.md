@@ -260,6 +260,7 @@ Para añadir las variables de entorno, `Administrar Jenkins` --> `System` y busc
 - SonarQube Scanner for Jenkins
 - Docker Pipeline
 - Docker
+- HTTP Request
 
 # Referencias
 - Docker Pipeline plugin - [docs.cloudbees.com](https://docs.cloudbees.com/docs/cloudbees-ci/latest/pipelines/docker-workflow)
