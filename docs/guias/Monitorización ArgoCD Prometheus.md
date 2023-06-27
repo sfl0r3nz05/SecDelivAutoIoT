@@ -5,22 +5,25 @@ En mi caso, ya tenía instalado Argocd siguiendo esta [guía de instalación de 
 ## Vincular un repositorio principal a ArgoCD
 ArgoCD usa la información de source y destination para monitorear continuamente el repositorio de Git en busca de cambios e implementarlos en el entorno de destino. Pongámoslo en acción aplicando los cambios:
 ```powershell
+sudo cat <<EOF | kubectl apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: workshop
+  name: configsecdelivautoiot
   namespace: argocd
 spec:
   destination:
-    namespace: argocd
+    namespace: secdelivautoiot
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argoCD/
-    repoURL: https://github.com/naturalett/continuous-delivery
+    path: kubernetes/
+    repoURL: https://gitlab.com/mikel-m/configSecDelivAutoIoT.git
     targetRevision: main
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true
 EOF
 ```
 Si da un error a la hora de ejecutarlo como el siguiente:
@@ -42,6 +45,26 @@ Lo primero de todo, hay que instalar Prometheus. Para eso, hay que ejecutar lo s
 ```powershell
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
+```
+
+Una vez instalado, ejecutamos lo siguiente:
+```powershell
+sudo cat <<EOF | kubectl apply -f -
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: secdelivautoiot
+  project: default
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 45.6.0
+    chart: kube-prometheus-stack
+EOF
 ```
 
 ## Referencias
