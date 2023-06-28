@@ -1,4 +1,6 @@
 # Flujo CI/CD Jenkins
+En esta guía vamos a ver cómo desplegar un contenedor Jenkins y crear dos pipelines ([repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT) y [repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT))para ejecutar el flujo de CI/CD de una aplicación de GitLab.
+
 ## Instalación de Jenkins
 Lo primero que hay que hacer es generar el contenedor de jenkins con socket docker, para poder generar imágenes docker y poder subirlo a Docker Hub:
 ```powershell
@@ -28,7 +30,8 @@ En el menú principal de Jenkins, hay que clickar en `Nueva tarea` en el menú d
 Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG">
 
-## SonarQube
+## Pipeline 1: SecDelivAutoIoT
+### SonarQube
 En mi caso, estoy ejecutando Sonarqube y Jenkins en contenedores distintos en mi host (ya están creados). Entonces lo primero de todo hay que crear el network y añadir Sonarqube y Jenkins a un network de docker:
 ```powershell
 docker network create secdelivautoiot
@@ -36,12 +39,12 @@ docker network connect secdelivautoiot jenkins
 docker network connect secdelivautoiot sonarqube
 ```
 
-### Configuración global
+#### Configuración global
 `Administrar Jenkins` --> `System` --> `SonarQube servers`:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Global%20SonarQube.PNG">
 
-### Primera ejecución del pipeline
-Para la primera ejecución del pipeline, hay que descargar sonarqube. Yo he cambiado el nombre a la carpeta de sonarqueb una vez descomprimida para facilitar el nombre a sonar-scanner:
+#### Primera ejecución del SonarQube en el pipeline
+Para la primera ejecución de SonarQube en el pipeline, hay que descargar sonarqube. Yo he cambiado el nombre a la carpeta de sonarqueb una vez descomprimida para facilitar el nombre a sonar-scanner:
 ```
 // Analisis SonarQube
 stage('Analysis with SonarQube') {
@@ -72,7 +75,7 @@ stage('Analysis with SonarQube') {
 }
 ```
 
-## Push Docker Hub
+### Push Docker Hub
 Lo primero de todo, tenemos que instalar docker en el contenedor de Jenkins. Para eso, ejecutamos el siguiente comando para acceder al contenedor desde Visual Studio Code:
 ```powershell
 docker exec -it -u 0 jenkins bash
@@ -104,7 +107,7 @@ stage('Build and Publish Image to Docker Hub') {
 }
 ```
 
-### Instalar docker.io desde Jenkinsfile
+#### Instalar docker.io desde Jenkinsfile
 Otra forma de instalar docker.io sería desde el propio jenkinsfile. Para eso añadimos el siguiente stage:
 ```
 // Build and Push image to Docker Hub
@@ -130,7 +133,7 @@ stage('Build and Publish Image to Docker Hub') {
 ```
 Un inconveniente que tiene esta forma es que cada vez que se ejecute Jenkinsfile, se intentará descargar docker.io en el contenedor Jenkins aunque ya esté instalado.
 
-## Analisis con Trivy
+### Analisis con Trivy
 Al igual que hicimos anteriormente con docker, aquí también tenemos que instalar trivy en el contenedor de jenkins. Para ello, ejecutamos el de nuevo el siguiente comando en Visual Studio Code para acceder al contenedor:
 ```powershell
 docker exec -it -u 0 jenkins bash
@@ -172,7 +175,7 @@ stage('Image Analysis with Trivy') {
 }
 ```
 
-### Instalar trivy desde Jenkinsfile
+#### Instalar trivy desde Jenkinsfile
 Al igual que en el paso de docker, se puede instalar trivy directamente desde el Jenkinsfile si necesidad de acceder al contenedor de Jenkins:
 ```
 // Analisis de imagen de Docker Hub con Trivy
@@ -207,8 +210,22 @@ stage('Image Analysis with Trivy') {
 }
 ```
 
-## Desplegar imagen en ArgoCD
-Para desplegar la imagen en ArgoCd, simplemente hay que añadir el siguiente stage al Jenkinsfile:
+### Ejecutar el pipeline `configSecDelivAutoIoT`
+En este stage vamos a crear lo equivalente a enviar un trigger en GitLab CI/CD. Para ello, tenemos que añadir en siguiente stage en Jenkinsfile:
+```
+// Ejecutar pipeline configSecDelivAutoIoT
+stage('Trigger to pipeline configSecDelivAutoIoT') {
+  steps {
+    script {
+      build job: 'configSecDelivAutoIoT'
+    }
+  }
+}
+```
+
+## Pipeline 2: configSecDelivAutoIoT
+### Desplegar imagen en ArgoCD
+Cuando se ejecuta el comando `build job` del primer pipeline, comienza la ejecución del segundo pipeline llamado `configSecDelivAutoIoT`. En este pipeline, vamos a desplegar la imagen genrada en Docker Hub en ArgoCD. Para desplegar la imagen en ArgoCd, simplemente hay que añadir el siguiente stage al Jenkinsfile:
 ```
 // Desplegar imagen a ArgoCD de la máquina virtual
 stage('Deploy Image to ArgoCD') {
@@ -260,9 +277,6 @@ Para añadir las variables de entorno, `Administrar Jenkins` --> `System` y busc
 - SonarQube Scanner for Jenkins
 - Docker Pipeline
 - Docker
-- HTTP Request
-- Parameterized Remote Trigger
-- Generic Webhook Trigger
 
 # Referencias
 - Docker Pipeline plugin - [docs.cloudbees.com](https://docs.cloudbees.com/docs/cloudbees-ci/latest/pipelines/docker-workflow)
