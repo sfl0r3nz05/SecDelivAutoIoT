@@ -52,6 +52,7 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 ### Android
 
 ## Overview
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
 *Añadir la imagen del overview*
 
 ## Implementación
