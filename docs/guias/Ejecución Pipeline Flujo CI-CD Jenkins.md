@@ -1,5 +1,5 @@
 # Flujo CI/CD Jenkins
-En esta guía vamos a ver cómo desplegar un contenedor Jenkins y crear dos pipelines ([repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT) y [repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT))para ejecutar el flujo de CI/CD de una aplicación de GitLab.
+En esta guía vamos a ver cómo desplegar un contenedor Jenkins y crear dos pipelines ([repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT) y [repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT)) para ejecutar el flujo de CI/CD de una aplicación de GitLab.
 
 ## Instalación de Jenkins
 Lo primero que hay que hacer es generar el contenedor de jenkins con socket docker, para poder generar imágenes docker y poder subirlo a Docker Hub:
