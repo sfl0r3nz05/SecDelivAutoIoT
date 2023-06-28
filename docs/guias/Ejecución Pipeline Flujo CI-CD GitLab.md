@@ -141,4 +141,110 @@ EXPOSE 3000
 CMD [ "python", "helloworld.py" ]
 ```
 
-La imagen genrada tiene una forma similar a: 
+Cuando GitLab CI/CD ejecute este job, generará una imagen docker y la registrará en Docker Hub con el formato `mikelm98/secdelivautoiot:xxxxxxxx` ya que en el job, las variables tienen los siguientes valores:
+- $DOCKER_USERNAME: mikelm98
+- $DOCKER_REPOSITORY: secdelivautoiot
+- $CI_COMMIT_SHORT_SHA: valor de commit SHA de GitLab
+
+### trivy_dockerhub
+Para analizar la imagen de Docker Hub con Trivy, solamente hay que descargar Trivy mediante el job de `.gitlab-ci.yml` y ejecutar el análisis pasando la imagen. Este es el código que hay que añadir a `.gitlab-ci.yml`:
+```
+# Analizar la imagen con trivy (Docker Hub)
+trivy_dockerhub:
+  stage: analyze
+  image: ubuntu:latest
+  variables:
+    CONTAINER_IMAGE: $DOCKER_USERNAME/$DOCKER_REPOSITORY:$CI_COMMIT_SHORT_SHA
+  script:
+    - apt-get update && apt-get install -y wget ca-certificates
+    - wget https://github.com/aquasecurity/trivy/releases/download/v0.19.2/trivy_0.19.2_Linux-64bit.tar.gz
+    - tar zxvf trivy_0.19.2_Linux-64bit.tar.gz
+    - ./trivy --severity HIGH,CRITICAL --no-progress image $CONTAINER_IMAGE
+  tags:
+    - SecDelivAutoIoT
+```
+Donde la variable $CONTAINER_IMAGE sigue el mismo criterio descrito en el paso anterior.
+
+### trigger_second_repository
+Por último, hay que enviar un trigger al repositorio de configuración para que ejecute el pipeline del repositorio. Para ello, añadimos el último job al archivo `.gitlab-ci.yml` del repositorio de la aplicación:
+```
+# Enviar trigger al repositorio de configuración
+trigger_second_repository:
+  stage: deploy
+  variables:
+    IMAGE_TAG: $DOCKER_USERNAME/$DOCKER_REPOSITORY:$CI_COMMIT_SHORT_SHA
+  trigger:
+    project: mikel-m/configSecDelivAutoIoT
+```
+
+## GitLab CI/CD del repositorio de la configuración
+En este caso, sólo vamos a tener un job que sirva para desplegar la imagen de Docker Hub en ArgoCD que está instalado en una máquina virtual. Para ello, nuestro archivo `.gitlab-ci.yml` del repositorio de configuración tendrá este código:
+```
+stages:
+  - deploy
+
+# Despliega la imagen en argocd de la máquina virtual
+deploy_to_argocd:
+  stage: deploy
+  image: ubuntu:latest
+  script:
+    - apt-get update && apt-get install -y git openssh-client sshpass
+    - 'sed -i "s|image:.*|image: $IMAGE_TAG|g" kubernetes/secdelivautoiot-deployment.yaml'
+    - cat kubernetes/secdelivautoiot-deployment.yaml | grep "image:"
+    - |
+      CHANGES=$(git status --porcelain | wc -l)
+      if [ "$CHANGES" -gt "0" ]; then
+        git config --global user.name $GITLAB_USER_LOGIN
+        git config --global user.email $GITLAB_USER_EMAIL
+        git add --all
+        git commit -m "Update image tag $IMAGE_TAG"
+        git push https://$GITLAB_USER_LOGIN:$PERSONAL_TOKEN@gitlab.com/mikel-m/configSecDelivAutoIoT.git HEAD:main -o ci.skip
+      fi
+    - sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd login localhost:32261 --insecure --username $ARGOCD_USERNAME --password $ARGOCD_PASSWORD"
+    - sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app create secdelivautoiot --repo https://gitlab.com/mikel-m/configSecDelivAutoIoT.git --path kubernetes --dest-server https://kubernetes.default.svc --dest-namespace secdelivautoiot"
+    - sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app sync secdelivautoiot"
+  tags:
+    - SecDelivAutoIoT
+```
+Pero para poder desplegar la imagen, tenemos que crear la carpeta llamada `kubernetes` en el repositorio de configuración y añadir los siguientes dos archivos:
+### ``secdelivautoiot-deployment.yaml
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secdelivautoiot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: secdelivautoiot
+  template:
+    metadata:
+      labels:
+        app: secdelivautoiot
+    spec:
+      containers:
+      - name: secdelivautoiot
+        image: mikelm98/secdelivautoiot:ea9a92aa
+        ports:
+        - containerPort: 80
+```
+
+### secdelivautoiot-svc.yaml
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: secdelivautoiot-svc
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: secdelivautoiot
+```
+
+Con esto ya podremos desplegar la imagen en ArgoCD que está en una máquina virtual.
+
+## Resumen
+En este documento se describen los pasos que hay que seguir para seguir el flujo GitOps que hemos diseñado para GitLab y desplegar la imagen de la aplicación en ArgoCD.
