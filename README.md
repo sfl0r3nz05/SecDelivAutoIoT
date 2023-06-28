@@ -53,7 +53,6 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 
 ## Overview
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
-*Añadir la imagen del overview*
 
 ## Implementación
 Para la implementación de estos flujo, hemos creado las siguientes guías para seguir paso a paso la implementación de los flujos descritos.
