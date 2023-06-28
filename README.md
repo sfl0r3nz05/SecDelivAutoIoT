@@ -57,6 +57,8 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 ## Implementación
 Para la implementación de estos flujo, hemos creado las siguientes guías para seguir paso a paso la implementación de los flujos descritos.
 ### GitLab
-Para el flujo de GitLab, hemos creado la siguiente [guía para la implementación del flujo en GitLab CI/CD]().
+Para el flujo de GitLab, hemos creado la siguiente [guía para la implementación del flujo en GitLab CI/CD](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20GitLab.md).
+### Jenkins
+Para el flujo de Jenkins, hemos creado la siguiente [guía para la implementación del flujo en Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20Jenkins.md).
 
 ## Monitorización
