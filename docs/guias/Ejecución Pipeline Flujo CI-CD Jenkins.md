@@ -240,6 +240,9 @@ stage('Deploy Image to ArgoCD') {
 
             // Configurar credenciales de Git
             withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', usernameVariable: 'GITLAB_USER_LOGIN', passwordVariable: 'PERSONAL_TOKEN')]) {
+                // Instalar herramientas necesarias
+                sh 'apt-get update && apt-get install -y git openssh-client sshpass'
+
                 // Clonar el repositorio GitLab
                 git branch: 'main', credentialsId: 'gitlab-credentials', url: 'https://gitlab.com/mikel-m/configSecDelivAutoIoT.git'
 
@@ -260,7 +263,6 @@ stage('Deploy Image to ArgoCD') {
                 '''
 
                 // Realizar acciones ArgoCD
-                sh 'apt-get update && apt-get install -y openssh-client sshpass'
                 sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd login localhost:32261 --insecure --username $ARGOCD_USERNAME --password $ARGOCD_PASSWORD"'
                 sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app create secdelivautoiot --repo https://gitlab.com/mikel-m/configSecDelivAutoIoT.git --path kubernetes --dest-server https://kubernetes.default.svc --dest-namespace secdelivautoiot"'
                 sh 'sshpass -p "$ARGOCD_PASSWORD_MV" ssh -o StrictHostKeyChecking=no $ARGOCD_USER_MV@$ARGOCD_IP_MV "argocd app sync secdelivautoiot"'
