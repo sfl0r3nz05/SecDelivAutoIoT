@@ -2,9 +2,9 @@
 En esta guía vamos a ver cómo ejecutar un flujo CI/CD utilizando GitLab CI/CD des dos repositorios ([aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT) y [configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT)).
 
 ## Crear aplicación
-Como lo que vamos a analizar es el flujo CI/CD, hemos creado una aplicación de prueba llamada `helloworld.py`:
+Como lo que vamos a analizar es el flujo CI/CD, hemos creado una aplicación de prueba llamada `helloworld.py` y los requerimientos (`requirements.txt`):
+### `helloworld.py`
 ```
-# helloworld.py
 from flask import Flask
 import sys
 
@@ -40,9 +40,8 @@ if __name__ == '__main__':
     # Inicia la aplicación Flask en el puerto especificado
     app.run(port=port)
 ```
-
+### `requirements.txt`
 ```
-# requirements.txt
 flask
 ```
 
