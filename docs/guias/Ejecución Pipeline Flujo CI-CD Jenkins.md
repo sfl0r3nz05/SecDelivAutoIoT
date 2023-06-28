@@ -27,9 +27,12 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 En el menú principal de Jenkins, hay que clickar en `Nueva tarea` en el menú de la izquierda. Se mostrará un nuevo menú con diferentes opciones, introduces el nombre que quieras dar al pipeline y seleccionas `Pipeline` y le das a `OK`. Una vez hecho esto, ya está listo el pipeline para la configuración.
 
 ## Configurar Pipeline Jenkins
-Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
-<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG">
-Como nosotros vamos a tener dos pipelines, en el primero vamos a añadir el repostorio de [SecDelivAutoIoT](https://gitlab.com/mikel-m/SecDelivAutoIoT) y en el segundo vamos a añadir el repositorio de [configSecDelivAutoIoT](https://gitlab.com/mikel-m/configSecDelivAutoIoT).
+Como nosotros vamos a tener dos pipelines, en el primero vamos a añadir el repostorio de [SecDelivAutoIoT](https://gitlab.com/mikel-m/SecDelivAutoIoT) y en el segundo vamos a añadir el repositorio de [configSecDelivAutoIoT](https://gitlab.com/mikel-m/configSecDelivAutoIoT). Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
+### Configuración Pipeline SecDelivAutoIoT
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG" alt="Configuración Pipeline SecDelivAutoIoT">
+
+### Configuración Pipeline configSecDelivAutoIoT
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuracion%20pipeline%20configSecDelivAutoIoT%20Jenkins.PNG" alt="Configuración Pipeline configSecDelivAutoIoT">
 
 ## Pipeline 1: SecDelivAutoIoT
 ### SonarQube
