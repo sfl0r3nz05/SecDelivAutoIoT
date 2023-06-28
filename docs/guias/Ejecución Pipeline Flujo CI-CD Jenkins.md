@@ -29,6 +29,7 @@ En el menú principal de Jenkins, hay que clickar en `Nueva tarea` en el menú d
 ## Configurar Pipeline Jenkins
 Para poder utilizar el archivo `Jenkinsfile` del repositorio de GitLab en el pipeline de Jenkin, hay que entrar en la configuración del pipeline y poner los siguientes ajustes:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuraci%C3%B3n%20Pipeline%20Jenkins.PNG">
+Cómo nosotros vamos a tener dos pipelines, en el primero vamos a añadir el repostorio de [SecDelivAutoIoT](https://gitlab.com/mikel-m/SecDelivAutoIoT) y en el segundo vamos a añadir el repositorio de [configSecDelivAutoIoT](https://gitlab.com/mikel-m/configSecDelivAutoIoT).
 
 ## Pipeline 1: SecDelivAutoIoT
 ### SonarQube
