@@ -283,6 +283,8 @@ Para añadir las variables de entorno, `Administrar Jenkins` --> `System` y busc
 - SonarQube Scanner for Jenkins
 - Docker Pipeline
 - Docker
+### Cómo instalar plugins
+`Administrar Jenkins` --> `Plugins` --> `Available plugins` y buscar el plugin deseado. Una vez localizado, seleccionarlo (check) y clickar en `Install without restart`.
 
 # Referencias
 - Docker Pipeline plugin - [docs.cloudbees.com](https://docs.cloudbees.com/docs/cloudbees-ci/latest/pipelines/docker-workflow)
