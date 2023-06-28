@@ -31,14 +31,32 @@
 ### [Documentación de flujos](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/Domumentacion-Flujos)
 - [Etapa 1: Flujo GitOps IoT GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Domumentacion-Flujos/Etapa%201-Flujo%20GitOps%20IoT%20GitLab.md)
 
+***
+
 ## Proyecto
-Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones siguiendo las arquitecturas diseñadas en los [diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o). En este momento estamos utilizando una aplicación simpe en Python pero el objetivo es poder utilizar también aplicaciones Android.
+Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones siguiendo la metodología GitOps diseñada en los [diseños de la arquitectura](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o).
 
-### Etapa 1
-En esta primera etapa se define implementa el flujo de CI en el [repositorio de GitLab de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT).
-1. Se analiza el código fuente con SonarQube.
-2. Se registra la imagen en Docker Hub.
-3. Se analiza la imagen con Trivy.
-4. Se envía un trigger al [repositorio de GitLab de la configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT).
+## Descripción
+Los flujos que hemos diseñado se han realizado para dispositivos IoT y para dispositivos Android.
+### IoT
+Para esta arquitectura, hemos diseñado dos flujos según las necesidades: utilizando GitLab CI/CD y utilizando Jenkins.
 
-Una vez enviado el trigger al repositorio de GitLab de configuración, se ejecutan los comandos de argocd mediante ssh a la máquina virtual para desplegar la imagen en ArgoCD.
+Para GitLab CI/CD, hemos creado dos repositorios (aplicación y configuración). En el repositorio de la aplicación se realiza el análisis del código fuente del repositorio en busca de vulnerabilidades y mejorar la calidad del código. Luego se genera la imagen docker y se registra en Docker Hub. Una vez subida, se analiza esa imagen en busca de vulnerabilidades. Y por último, se despliega la imagen en ArgoCD.
+
+Para Jenkins, el flujo sigue la misma idea solo que uilizando dos pipelines de Jenkins en vez de GitLab CI/CD. En este caso, también se utilizan dos repositorios (aplicación y configuración) que se definen cada uno en un pipeline.
+
+En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jenkins:
+- [Flujo con GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.1%20Arquitectura%20Flujo%20GitOps%20IoT%20GitLab.md)
+- [Flujo con Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.3%20Arquitectura%20Flujo%20GitOps%20IoT%20Jenkins.md)
+
+### Android
+
+## Overview
+*Añadir la imagen del overview*
+
+## Implementación
+Para la implementación de estos flujo, hemos creado las siguientes guías para seguir paso a paso la implementación de los flujos descritos.
+### GitLab
+Para el flujo de GitLab, hemos creado la siguiente [guía para la implementación del flujo en GitLab CI/CD]().
+
+## Monitorización
