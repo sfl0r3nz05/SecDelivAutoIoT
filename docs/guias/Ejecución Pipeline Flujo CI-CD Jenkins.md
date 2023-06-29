@@ -34,6 +34,9 @@ Como nosotros vamos a tener dos pipelines, en el primero vamos a añadir el repo
 ### Configuración Pipeline configSecDelivAutoIoT
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Configuracion%20pipeline%20configSecDelivAutoIoT%20Jenkins.PNG" alt="Configuración Pipeline configSecDelivAutoIoT">
 
+### Crear el archivo `Jenkinsfile`
+Lo primero que hay que hacer es crear el archivo `Jenkinsfile` en los dos repositorios (uno en cada repositorio). `Jenkinsfile` es el archivo que se encarga de ejecutar el pipeline de Jenkins y desencadenar las tareas cada vez que hay un cambio en el repositorio.
+
 ## Pipeline 1: SecDelivAutoIoT
 ### SonarQube
 En mi caso, estoy ejecutando Sonarqube y Jenkins en contenedores distintos en mi host (ya están creados). Entonces lo primero de todo hay que crear el network y añadir Sonarqube y Jenkins a un network de docker:
