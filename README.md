@@ -62,3 +62,8 @@ Para el flujo de GitLab, hemos creado la siguiente [guía para la implementació
 Para el flujo de Jenkins, hemos creado la siguiente [guía para la implementación del flujo en Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20Jenkins.md).
 
 ## Monitorización
+Para la parte de la monitorización, hemos utilizado la herramienta de Prometheus para recopilar las métricas y la herramienta Grafana para la visualización de las métricas.
+### GitLab
+Para la implementación de las herramientas de monitorización de GitLab CI/CD, hemos creado la siguiente [guía para la monitorización del flujo de GitLab CI/CD](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Monitorizaci%C3%B3n%20GitLab%20Prometheus%20Grafana.md).
+### Jenkins
+Para la implementación de las herramientas de monitorización de Jenkins, hemos creado la siguinete [guía para la monitorización del flujo de Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Monitorizaci%C3%B3n%20Jenkins%20Prometheus%20Grafana.md).
