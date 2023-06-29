@@ -9,7 +9,7 @@ sudo cat <<EOF | kubectl apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: configsecdelivautoiot
+  name: workshop
   namespace: argocd
 spec:
   destination:
