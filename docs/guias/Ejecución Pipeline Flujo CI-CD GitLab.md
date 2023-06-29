@@ -40,10 +40,6 @@ if __name__ == '__main__':
     # Inicia la aplicación Flask en el puerto especificado
     app.run(port=port)
 ```
-### `requirements.txt`
-```
-flask
-```
 
 ## Crear el archivo `.gitlab-ci.yml`
 Lo primero que hay que hacer es crear el archivo `.gitlab-ci.yml` en los dos repositorios (uno en cada repositorio). `.gitlab-ci.yml` es el archivo que se encarga de ejecutar el pipeline de GitLab CI/CD y desencadenar las tareas cada vez que hay un cambio en el repositorio.
