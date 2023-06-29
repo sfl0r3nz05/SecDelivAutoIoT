@@ -52,6 +52,7 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 ### Android
 
 ## Overview
+En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de CI y CD:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
 
 ## Implementación
