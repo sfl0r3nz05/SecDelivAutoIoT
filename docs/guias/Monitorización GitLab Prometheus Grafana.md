@@ -1,4 +1,4 @@
-# Configuración Prometheus y Grafana (GitLab)
+# Monitorización de GitLab CI/CD (Prometheus y Grafana)
 ## Configuración inicial
 Vamos a utilizar los archivos del repositorio [mvisonneau/gitlab-ci-pipelines-exporter](https://github.com/mvisonneau/gitlab-ci-pipelines-exporter/tree/main) de github. Lo primero que tenemos que hacer es clonar el repositorio y dirigirnos a la carpera `gitlab-ci-pipelines-exporter/examples/quickstart`:
 ```powershell
