@@ -34,7 +34,7 @@
 ***
 
 ## Proyecto
-Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones siguiendo la metodología GitOps diseñada en los [diseños de la arquitectura](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o) tanto para GitLab como para Jenkins.
+Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones sobre dispositivos IoT y Android siguiendo la metodología GitOps diseñada en los [diseños de la arquitectura](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o) tanto para GitLab como para Jenkins.
 
 ## Descripción
 Los flujos que hemos diseñado se han realizado para dispositivos IoT y para dispositivos Android.
@@ -50,6 +50,13 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 - [Flujo con Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.3%20Arquitectura%20Flujo%20GitOps%20IoT%20Jenkins.md)
 
 ### Android
+Para dispositivos Android, también hemos realizado el diseño utilizando GitLab CI/CD y Jenkins.
+
+Como en el caso de IoT, también vamos a utilizar dos repositorios (aplicación y configuración). En este caso, el flujo sigue la misma idea que en IoT de analizar el código fuente, generar la imagen de la aplicación, analizar esa imagen y desplegarla.
+
+En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jenkins:
+- [Flujo con GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.2%20Arquitectura%20Flujo%20GitOps%20Android%20GitLab.md)
+- [Flujo con Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.4%20Arquitectura%20Flujo%20GitOps%20Android%20Jenkins.md)
 
 ## Overview
 En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de CI y CD:
