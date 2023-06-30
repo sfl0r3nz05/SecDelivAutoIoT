@@ -36,6 +36,10 @@
 ## Proyecto
 Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones sobre dispositivos IoT y Android siguiendo la metodología GitOps diseñada en los [diseños de la arquitectura](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o) tanto para GitLab como para Jenkins.
 
+## Overview
+En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de CI y CD:
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
+
 ## Descripción
 Los flujos que hemos diseñado se han realizado para dispositivos IoT y para dispositivos Android.
 ### IoT
@@ -57,10 +61,6 @@ Como en el caso de IoT, también vamos a utilizar dos repositorios (aplicación 
 En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jenkins:
 - [Flujo con GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.2%20Arquitectura%20Flujo%20GitOps%20Android%20GitLab.md)
 - [Flujo con Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.4%20Arquitectura%20Flujo%20GitOps%20Android%20Jenkins.md)
-
-## Overview
-En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de CI y CD:
-<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
 
 ## Implementación
 Para la implementación de estos flujos, hemos creado las siguientes guías para seguir paso a paso la implementación de los flujos descritos.
