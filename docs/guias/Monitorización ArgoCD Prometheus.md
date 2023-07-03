@@ -9,15 +9,15 @@ sudo cat <<EOF | kubectl apply -f -
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: secdelivautoiot
+  name: workshop
   namespace: argocd
 spec:
   destination:
-    namespace: secdelivautoiot
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kubernetes/
+    path: argoCD/
     repoURL: https://gitlab.com/mikel-m/configSecDelivAutoIoT.git
     targetRevision: main
   syncPolicy:
@@ -38,33 +38,6 @@ sudo chmod +r /etc/rancher/k3s/k3s.yaml
 Accedamos a la interfaz de usuario del servidor mediante el reenvío de puertos kubectl:
 ```powershell
 kubectl port-forward service/argocd-server -n argocd 8080:443
-```
-
-## Instalar Prometheus a través de ArgoCD
-Lo primero de todo, hay que instalar Prometheus. Para eso, hay que ejecutar lo siguiente:
-```powershell
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-```
-
-Una vez instalado, ejecutamos lo siguiente:
-```powershell
-sudo cat <<EOF | kubectl apply -f -
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: prometheus
-  namespace: argocd
-spec:
-  destination:
-    name: in-cluster
-    namespace: secdelivautoiot
-  project: default
-  source:
-    repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 45.6.0
-    chart: kube-prometheus-stack
-EOF
 ```
 
 ## Referencias
