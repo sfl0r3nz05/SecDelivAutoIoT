@@ -90,7 +90,7 @@ sonarqube-check:
 ```
 
 Una vez hecho esto, el servido se queda esperando hasta que ejecutemos el pipeline con la ejecución del análisis de SonarQube. Al terminar el análisis, tendría que salir algo similar a lo siguiente:
-<img src="" alt="Captura de análisis de SonarQube">
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20Analisis%20SonarQube.PNG" alt="Captura de análisis de SonarQube">
 
 ### release_dockerhub
 El siguiente job sirve para generar la imagen de la aplicación del repositorio y registrarla en Docker Hub. Para ello añadimos el siguiente código al archivo `.gitlab-ci.yml`:
