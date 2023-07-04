@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" modified="2023-06-20T07:05:24.794Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="_g8DeCBMHIiGbZNvsVlg" version="21.5.0" type="google">
+  <diagram name="Página-1" id="4Cp7SVPKpOeMqZ0zGOgU">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="J47PyLeXgsS5da0HIpms-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="GqjmTqLQMe0BD1-ar4CZ-1" target="J47PyLeXgsS5da0HIpms-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="455.06500000000005" y="475.8299999999999" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="GqjmTqLQMe0BD1-ar4CZ-3" target="GqjmTqLQMe0BD1-ar4CZ-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="J47PyLeXgsS5da0HIpms-1" target="J47PyLeXgsS5da0HIpms-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-1" value="Visual Studio Code" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="135" y="200" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="J47PyLeXgsS5da0HIpms-3" target="GqjmTqLQMe0BD1-ar4CZ-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="422.3844200000001" y="516.9703999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://1000marcas.net/wp-content/uploads/2022/04/Gitlab-Logo.png;" vertex="1" parent="1">
+          <mxGeometry x="90" y="470" width="170" height="95.63" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="J47PyLeXgsS5da0HIpms-6" target="GqjmTqLQMe0BD1-ar4CZ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-6" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://plmlab.math.cnrs.fr/uploads/-/system/project/avatar/4980/logo-kaniko.png;" vertex="1" parent="1">
+          <mxGeometry x="640" y="455.82" width="124" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-9" value="Commit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="145" y="370" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="J47PyLeXgsS5da0HIpms-16" target="J47PyLeXgsS5da0HIpms-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-16" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.user;" vertex="1" parent="1">
+          <mxGeometry x="416.06" y="201" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-19" value="Cheque No Exitoso" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="391.06" y="370" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-21" value="Desplegar Imagen" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cncf-branding.netlify.app/img/projects/argo/stacked/color/argo-stacked-color.png;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="178.52999999999994" width="84" height="122.93" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="GqjmTqLQMe0BD1-ar4CZ-1" target="J47PyLeXgsS5da0HIpms-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490.1300000000001" y="517.815" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-31" value="Analizar Código Fuente" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="260.06" y="490" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-33" value="Chequeo Exitoso" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="490" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-37" value="Analizar Imagen" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="953" y="370" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="J47PyLeXgsS5da0HIpms-39" value="Cheque No Exitoso" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="670" y="210.00000000000003" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.svgrepo.com/show/354365/sonarqube.svg;" vertex="1" parent="1">
+          <mxGeometry x="410.06" y="472.82" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-3" value="Docker Hub" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;" vertex="1" parent="1">
+          <mxGeometry x="946" y="464.75" width="124" height="106.13" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-5" value="Registrar Imagen" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="795" y="490" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="GqjmTqLQMe0BD1-ar4CZ-7" target="J47PyLeXgsS5da0HIpms-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="GqjmTqLQMe0BD1-ar4CZ-7" target="J47PyLeXgsS5da0HIpms-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1200" y="240" />
+              <mxPoint x="1200" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-7" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static-00.iconduck.com/assets.00/trivy-icon-312x512-i437m5pr.png;" vertex="1" parent="1">
+          <mxGeometry x="972" y="180.92000000000002" width="72" height="118.15" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-10" value="Chequeo Exitoso" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="210" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GqjmTqLQMe0BD1-ar4CZ-15" value="Developer" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="416.06" y="290" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UQR0M5_u0II3AXi3FZKc-1" value="Kaniko" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="672" y="455.82" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UQR0M5_u0II3AXi3FZKc-2" value="Generar Imagen" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="647" y="555" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
