@@ -62,12 +62,24 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 - [Flujo con GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.2%20Arquitectura%20Flujo%20GitOps%20Android%20GitLab.md)
 - [Flujo con Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.4%20Arquitectura%20Flujo%20GitOps%20Android%20Jenkins.md)
 
+## Tabla de herramientas de seguridad
+| **Herramienta**    | **Descripción**                                                                                                                                                                                                                                 | **OWASP**               | **NIST**                                                   | **Open Source** | **Lenguaje**                                           | **Docker** |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|--------------------------------------------------------|-------------|----------------------------------------------------|--------|
+| SonarQube      | SonarQube es una herramienta de análisis de calidad de código y seguridad que permite a los desarrolladores mejorar la calidad del código y detectar vulnerabilidades de seguridad temprano en el ciclo de vida del desarrollo de software. | Sí                  | No (explícitamente)                                    | Sí          | ☑Python <br> ☑JavaScript <br> ☑Java | Sí     |
+| Trivy          | Trivy es un escáner de vulnerabilidades de imágenes de contenedores de código abierto que puede integrarse en pipelines de CI/CD para identificar vulnerabilidades en imágenes de contenedores.                                             | No (explícitamente) | No, pero sí Common Vulnerabilities and Exposures (CVE) | Sí          | ☑Python <br> ☑JavaScript <br> ☑Java | Sí     |
+| Sysdig Falco   | Falco es una herramienta de detección de amenazas de seguridad para entornos de contenedores que utiliza reglas personalizadas para alertar sobre actividades sospechosas.                                                                  | No (explícitamente) | No (explícitamente)                                    | Sí          | Examina los contenedores                           | Sí     |
+| Anchore Engine | Anchore Engine es una plataforma de seguridad de contenedores que ofrece escaneo de imágenes, análisis de vulnerabilidades, políticas personalizadas y monitoreo continuo de vulnerabilidades.                                              | No (explícitamente) | No (explícitamente)                                    | Sí          | ☑Python <br> ☑JavaScript <br> ☑Java | Sí     |
+
 ## Implementación
 Para la implementación de estos flujos, hemos creado las siguientes guías para seguir paso a paso la implementación de los flujos descritos.
-### GitLab
-Para el flujo de GitLab, hemos creado la siguiente [guía para la implementación del flujo en GitLab CI/CD](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20GitLab.md).
-### Jenkins
-Para el flujo de Jenkins, hemos creado la siguiente [guía para la implementación del flujo en Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20Jenkins.md).
+### IoT
+- **GitLab**: Para el flujo de GitLab en dispositivos IoT, hemos creado la siguiente [guía para la implementación del flujo en GitLab CI/CD](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20GitLab.md).
+- **Jenkins**: Para el flujo de Jenkins en dispositivos IoT, hemos creado la siguiente [guía para la implementación del flujo en Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20Jenkins.md).
+
+### Android
+- **GitLab**: Para el flujo de GitLab en dispositivos Android, hemos creado la siguiente _guía para la implementación del flujo en GitLab CI/CD_.
+
+- **Jenkins**: Para el flujo de Jenkins en dispositivos Android, hemos creado la siguiente _guía para la implementación del flujo en Jenkins_.
 
 ## Monitorización
 Para la parte de la monitorización, hemos utilizado la herramienta de Prometheus para recopilar las métricas y la herramienta Grafana para la visualización de las métricas.
