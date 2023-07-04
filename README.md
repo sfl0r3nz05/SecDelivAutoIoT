@@ -40,7 +40,7 @@ Este proyecto pretende automatizar la Integración Continua y el Despliegue Cont
 En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de CI y CD:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
 
-## Descripción
+## Diseño
 Los flujos que hemos diseñado se han realizado para dispositivos IoT y para dispositivos Android.
 ### IoT
 Para esta arquitectura, hemos diseñado dos flujos según las necesidades: utilizando GitLab CI/CD y utilizando Jenkins.
