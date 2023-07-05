@@ -1,39 +1,4 @@
 # Secure delivery automation over monitored IoT infrastructures
-
-- This repository is under development by [@mikel-m](mikelmorillo98@gmail.com) and [@sfl0r3nz05](sfigueroa@ceit.es).
-
-<!--
-![image](https://user-images.githubusercontent.com/6643905/221798180-3fbb2e2d-5d3c-45d5-b670-da783c05b06f.png)
--->
-
-## Contenido
-### Estructura
-- [Estado del Arte](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Estado%20del%20Arte.md)
-- [Herramientas para análisis de seguridad](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Herramientas%20para%20an%C3%A1lisis%20de%20seguridad.md)
-- [Repositorio con los diseños](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o)
-- [Métricas de monitorización](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/M%C3%A9tricas%20de%20monitorizaci%C3%B3n.md)
-- [Repositorio con apuntes propios](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/apuntes)
-
-### Guías
-- [Repositorio con las guías](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/guias)
-
-### Repositorios de GitLab
-- [Repositorio de la aplicación](https://gitlab.com/mikel-m/SecDelivAutoIoT)
-- [Repositorio de configuración](https://gitlab.com/mikel-m/configSecDelivAutoIoT)
-
-### Repositorio de GitHub
-- [Repositorio de GitHub](https://github.com/sfl0r3nz05/SecDelivAutoIoT)
-
-### Registro de imágenes
-- GitLab Container Registry: [mikel-m/secdelivautoiot](https://gitlab.com/mikel-m/SecDelivAutoIoT/container_registry/4192474)
-- Docker Hub: [mikelm98/secdelivautoiot](https://hub.docker.com/repository/docker/mikelm98/secdelivautoiot/general)
-
-### [Documentación de flujos](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/Domumentacion-Flujos)
-- [Etapa 1: Flujo GitOps IoT GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Domumentacion-Flujos/Etapa%201-Flujo%20GitOps%20IoT%20GitLab.md)
-
-***
-
-# Secure delivery automation over monitored IoT infrastructures
 Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones sobre dispositivos IoT y Android siguiendo la metodología GitOps diseñada en los [diseños de la arquitectura](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o) tanto para GitLab como para Jenkins.
 
 ## Overview
