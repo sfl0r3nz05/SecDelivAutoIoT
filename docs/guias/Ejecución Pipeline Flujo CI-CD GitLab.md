@@ -202,8 +202,8 @@ deploy_to_argocd:
   tags:
     - SecDelivAutoIoT
 ```
-Pero para poder desplegar la imagen, tenemos que crear la carpeta llamada `kubernetes` en el repositorio de configuración y añadir los siguientes dos archivos:
-### ``secdelivautoiot-deployment.yaml
+Pero para poder desplegar la imagen, tenemos que crear la carpeta llamada `kubernetes` en el repositorio de configuración (configSecDelivAutoIoT) y añadir los siguientes dos archivos:
+### `secdelivautoiot-deployment.yaml`
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -226,7 +226,7 @@ spec:
         - containerPort: 80
 ```
 
-### secdelivautoiot-svc.yaml
+### `secdelivautoiot-svc.yaml`
 ```
 apiVersion: v1
 kind: Service
