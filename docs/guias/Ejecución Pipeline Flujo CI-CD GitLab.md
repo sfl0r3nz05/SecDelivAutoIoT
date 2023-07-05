@@ -142,6 +142,11 @@ Cuando GitLab CI/CD ejecute este job, generará una imagen docker y la registrar
 - $DOCKER_REPOSITORY: secdelivautoiot
 - $CI_COMMIT_SHORT_SHA: valor de commit SHA de GitLab
 
+Para que funcione el registro de la imagen en Docker Hub, hay que añadir las siguientes variables de entorno a GitLab CI/CD (`Settings` --> `CI/CD` --> `Variables`):
+- $DOCKER_USERNAME: el usuario de Docker Hub donde se va a registrar la imagen (en nuestro caso, mikelm98).
+- $DOCKER_PASSWORD: la contraseña de Docker Hub Del usuario.
+- $DOCKER_REPOSITORY: el nombre de la imagen que queremos registrar en Docker Hub (en nuestro caso, secdelivautoiot).
+
 ### trivy_dockerhub
 Para analizar la imagen de Docker Hub con Trivy, solamente hay que descargar Trivy mediante el job de `.gitlab-ci.yml` y ejecutar el análisis pasando la imagen. Este es el código que hay que añadir a `.gitlab-ci.yml`:
 ```
