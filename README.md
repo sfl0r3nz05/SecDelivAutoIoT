@@ -46,7 +46,7 @@ Para la implementación de estos flujos, hemos creado las siguientes guías para
 
 - **Jenkins**: Para el flujo de Jenkins en dispositivos Android, hemos creado la siguiente _guía para la implementación del flujo en Jenkins_.
 
-En el caso de Androis, sigue en desarrollo por lo que no hay ninguna guía de implementación.
+En el caso de Android, sigue en desarrollo por lo que no hay ninguna guía de implementación.
 
 ## Monitorización
 Para la parte de la monitorización, hemos utilizado la herramienta de Prometheus para recopilar las métricas y la herramienta Grafana para la visualización de las métricas.
