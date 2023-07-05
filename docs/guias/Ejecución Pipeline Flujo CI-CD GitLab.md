@@ -242,5 +242,72 @@ spec:
 
 Con esto ya podremos desplegar la imagen en ArgoCD que está en una máquina virtual.
 
+## Versión GitLab Container Registry
+Esta guía es para registrar la imagen en Docker Hub. Pero GitLab ofrece un registro de imágenes llamada GitLab Container Registry. Para registrar la imagen en GitLab Container Registry, hay que cambiar varias cosas en el archivo `.gitlab-ci.yml` del repositorio de la aplicación (SecDelivAutoIoT). El archivo completo quedaría así:
+```
+stages:
+  - check
+  - build
+  - analyze
+  - deploy
+
+# Analizar código fuente con sonarqube
+sonarqube-check:
+  stage: check
+  image: 
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script: 
+    - sonar-scanner
+  tags:
+    - SecDelivAutoIoT
+
+# Registrar la imagen en GitLab Container Registry
+release_container_registry:
+  stage: build
+  tags:
+    - SecDelivAutoIoT
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}/"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+
+# Analizar la imagen con trivy (GitLab Container Registry)
+trivy_container_registry:
+  stage: analyze
+  image: ubuntu:latest
+  variables:
+    CONTAINER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
+  script:
+    - apt-get update && apt-get install -y wget ca-certificates
+    - wget https://github.com/aquasecurity/trivy/releases/download/v0.19.2/trivy_0.19.2_Linux-64bit.tar.gz
+    - tar zxvf trivy_0.19.2_Linux-64bit.tar.gz
+    - ./trivy --severity HIGH,CRITICAL --no-progress image $CONTAINER_IMAGE
+  tags:
+    - SecDelivAutoIoT
+
+# Enviar trigger al repositorio de configuración (GitLab Container Registry)
+trigger_second_repository:
+  stage: deploy
+  variables:
+    IMAGE_TAG: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
+  trigger:
+    project: mikel-m/configSecDelivAutoIoT
+```
+
 ## Resumen
 En este documento se describen los pasos que hay que seguir para seguir el flujo GitOps que hemos diseñado para GitLab y desplegar la imagen de la aplicación en ArgoCD.
