@@ -28,7 +28,7 @@ En nuestro caso, nos sale esto:
 ``` powershell
 service/argocd-server                             LoadBalancer   10.43.179.226   <pending>     80:30361/TCP,443:32261/TCP   30m
 ```
-Por lo que en el navegador tenemos que acceder a [[http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>]([http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>)
+Por lo que en el navegador tenemos que acceder a [http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>]([http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>), que en nuestro caso es el puerto 32261.
 
 ## Login en ArgoCD
 Para acceder a ArgoCD, tenemos que ejecutar el siguiente comando para obtener la contraseña inicial de ArgoCD:
