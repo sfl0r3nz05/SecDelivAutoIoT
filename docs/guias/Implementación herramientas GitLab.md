@@ -42,6 +42,31 @@ sonarqube-check:
 Una vez hecho esto, el servido se queda esperando hasta que ejecutemos el pipeline con la ejecución del análisis de SonarQube. Al terminar el análisis, tendría que salir algo similar a lo siguiente:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20Analisis%20SonarQube.PNG" alt="Captura de análisis de SonarQube">
 
+## Trivy
+### Descripción
+Trivy es un escáner de vulnerabilidades de imágenes de contenedores de código abierto que puede integrarse en pipelines de CI/CD para identificar vulnerabilidades en imágenes de contenedores.
+
+### Diseño
+
+
+### Implementación
+Para utilizar Trivy para analizar imágenes Docker, sólo hay que añadir el siguiente job al archivo `.gitlab-ci.yml`:
+```
+trivy_container_registry:
+  stage: analyze
+  image: ubuntu:latest
+  variables:
+    CONTAINER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
+  script:
+    - apt-get update && apt-get install -y wget ca-certificates
+    - wget https://github.com/aquasecurity/trivy/releases/download/v0.19.2/trivy_0.19.2_Linux-64bit.tar.gz
+    - tar zxvf trivy_0.19.2_Linux-64bit.tar.gz
+    - ./trivy --severity HIGH,CRITICAL --no-progress image $CONTAINER_IMAGE
+  tags:
+    - SecDelivAutoIoT
+```
+Donde la variable `$CONTAINER_IMAGE` pondremos la imagen que queremos analizar, en este ejemplo, la imagen generada anteriormente y guardada en GitLab Container Registry.
+
 ## MobsSF Scan
 ### Descripción
 Mobile Security Framework (MobSF) es una plataforma de pruebas de seguridad móvil de código abierto que permite a los desarrolladores evaluar la seguridad de aplicaciones Android. MobSF se utiliza para realizar análisis estático y dinámico de aplicaciones móviles con el objetivo de identificar vulnerabilidades y mejorar la seguridad de la aplicación.
@@ -66,3 +91,12 @@ mobsfscan-check:
 ```
 Este es una captura de un ejemplo que tendría que salir al ejecutar el análisis:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20Pipeline%20MobSF.PNG" alt="Captura de un análisis de MobSF">
+
+## Anchore Engine
+### Descripción
+Anchore Engine es una plataforma de seguridad de contenedores que ofrece escaneo de imágenes, análisis de vulnerabilidades, políticas personalizadas y monitoreo continuo de vulnerabilidades.
+
+### Diseño
+
+
+### Implementación
