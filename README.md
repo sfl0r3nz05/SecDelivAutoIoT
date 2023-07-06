@@ -36,7 +36,7 @@ Estas son las herramientas para el análisis de vulnerabilidades utilizadas en l
 | MobSF          | MobSF (Mobile Security Framework) es una herramienta de código abierto utilizada para el análisis y la seguridad de aplicaciones móviles. Proporciona capacidades de escaneo y análisis estático y dinámico para detectar vulnerabilidades y riesgos de seguridad en aplicaciones móviles.  | No (explícitamente)  | No (explícitamente)  | Sí  | ☑Python <br> ☑JavaScript <br> ☑Java  | Sí  |
 | Anchore Engine | Anchore Engine es una plataforma de seguridad de contenedores que ofrece escaneo de imágenes, análisis de vulnerabilidades, políticas personalizadas y monitoreo continuo de vulnerabilidades.                                              | No (explícitamente) | No (explícitamente)                                    | Sí          | ☑Python <br> ☑JavaScript <br> ☑Java | Sí     |
 
-Para implementar estas herramientas, hemos creado las siguiente [guía de implementación de las herramientas (https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Implementaci%C3%B3n%20herramientas%20GitLab.md). Por ahora sólo está disponible para GitLab CI/CD.
+Para implementar estas herramientas, hemos creado las siguiente [guía de implementación de las herramientas](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Implementaci%C3%B3n%20herramientas%20GitLab.md). Por ahora sólo está disponible para GitLab CI/CD.
 
 ## Implementación
 Para la implementación de estos flujos, hemos creado las siguientes guías para seguir paso a paso la implementación de los flujos descritos.
