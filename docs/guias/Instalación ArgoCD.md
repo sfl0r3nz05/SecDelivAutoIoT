@@ -28,7 +28,7 @@ En nuestro caso, nos sale esto:
 ``` powershell
 service/argocd-server                             LoadBalancer   10.43.179.226   <pending>     80:30361/TCP,443:32261/TCP   30m
 ```
-Por lo que en el navegador tenemos que acceder a la ip de la máquina virtual y al puerto 32261.
+Por lo que en el navegador tenemos que acceder a [[http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>]([http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>)
 
 ## Login en ArgoCD
 Para acceder a ArgoCD, tenemos que ejecutar el siguiente comando para obtener la contraseña inicial de ArgoCD:
@@ -47,7 +47,8 @@ argocd account update-password
 ```
 
 ## Acceder a la interfaz de ArgoCD
-Una vez todo listo, en el navegador, introduce la ip de la máquina virtual y el puerto mostrado anteriormente e introduces el usuario `admin` y la contraseña que hayas introducido con el cambio de contraseña. Entonces ya estaría listo para utilizar ArgoCD en la máquina virtual.
+Una vez todo listo, en el navegador, introduce la ip de la máquina virtual y el puerto mostrado anteriormente ([http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>]([http://\<ip-maquina-virtual\>:\<puerto-argocd-server\>)) e introduces el usuario `admin` y la contraseña que hayas introducido con el cambio de contraseña.
+<img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20Menu%20ArgoCD.PNG" alt="Menu ArgoCD">
 
 ## Referencias
 - ArgoCD - Getting Started - [argo-cd.readthedocs.io](https://argo-cd.readthedocs.io/en/stable/getting_started/)
