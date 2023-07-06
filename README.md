@@ -2,7 +2,7 @@
 Este proyecto pretende automatizar la Integración Continua y el Despliegue Continuo de forma segura de aplicaciones sobre dispositivos IoT y Android siguiendo la metodología GitOps diseñada en los [diseños de la arquitectura](https://github.com/sfl0r3nz05/SecDelivAutoIoT/tree/master/docs/dise%C3%B1o) tanto para GitLab como para Jenkins.
 
 ## Overview
-En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de CI y CD:
+En la siguiente imagen se puede ver la idea general que siguen los flujos que hemos diseñado, separando tanto los repositorios como la parte de la Integración Continua (CI) y el Despliegue Continuo (CD):
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Overview.svg" alt="Overview">
 
 ## Diseño
