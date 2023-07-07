@@ -91,12 +91,3 @@ mobsfscan-check:
 ```
 Este es una captura de un ejemplo que tendría que salir al ejecutar el análisis:
 <img src="https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/images/Captura%20Pipeline%20MobSF.PNG" alt="Captura de un análisis de MobSF">
-
-## Anchore Engine
-### Descripción
-Anchore Engine es una plataforma de seguridad de contenedores que ofrece escaneo de imágenes, análisis de vulnerabilidades, políticas personalizadas y monitoreo continuo de vulnerabilidades.
-
-### Diseño
-
-
-### Implementación
