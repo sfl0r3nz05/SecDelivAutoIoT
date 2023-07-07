@@ -44,10 +44,6 @@ Para la implementación de estos flujos, hemos creado las siguientes guías para
 - **Jenkins**: Para el flujo de Jenkins en dispositivos IoT, hemos creado la siguiente [guía para la implementación del flujo en Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Ejecuci%C3%B3n%20Pipeline%20Flujo%20CI-CD%20Jenkins.md).
 
 ### Android
-- **GitLab**: Para el flujo de GitLab en dispositivos Android, hemos creado la siguiente _guía para la implementación del flujo en GitLab CI/CD_.
-
-- **Jenkins**: Para el flujo de Jenkins en dispositivos Android, hemos creado la siguiente _guía para la implementación del flujo en Jenkins_.
-
 En el caso de Android, sigue en desarrollo por lo que no hay ninguna guía de implementación.
 
 ## Monitorización
@@ -56,3 +52,9 @@ Para la parte de la monitorización, hemos utilizado la herramienta de Prometheu
 Para la implementación de las herramientas de monitorización de GitLab CI/CD, hemos creado la siguiente [guía para la monitorización del flujo de GitLab CI/CD](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Monitorizaci%C3%B3n%20GitLab%20Prometheus%20Grafana.md).
 ### Jenkins
 Para la implementación de las herramientas de monitorización de Jenkins, hemos creado la siguinete [guía para la monitorización del flujo de Jenkins](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/guias/Monitorizaci%C3%B3n%20Jenkins%20Prometheus%20Grafana.md).
+
+## To do
+1. Implementar el flujo para aplicaciones Android en GitLab CI/CD y Jenkins.
+2. Monitorización de ArgoCD.
+3. Automatización de Jenkins cuando se realiza un push en el repositorio.
+4. Implementar más [herramientas para el análisis de seguridad](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/Herramientas%20para%20an%C3%A1lisis%20de%20seguridad.md).
