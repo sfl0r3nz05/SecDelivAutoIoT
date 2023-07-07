@@ -21,7 +21,7 @@ En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jen
 ### Android
 Para dispositivos Android, también hemos realizado el diseño utilizando GitLab CI/CD y Jenkins.
 
-Como en el caso de IoT, también vamos a utilizar dos repositorios (aplicación y configuración). En este caso, el flujo sigue la misma idea que en IoT de analizar el código fuente, generar la imagen de la aplicación, analizar esa imagen y desplegarla en ArgoCD. Los diseños de Android es una idea inicial por lo que no es el resultado final del diseño del flujo.
+Como en el caso de IoT, también vamos a utilizar dos repositorios (aplicación y configuración). En este caso, el flujo sigue la misma idea que en IoT de analizar el código fuente, generar la imagen de la aplicación, analizar esa imagen y desplegarla en ArgoCD. Los diseños de Android es una idea inicial, es decir, que está en desarrollo, por lo que no es el resultado final del diseño del flujo.
 
 En los siguientes enlaces puedes ver los diseños del flujo con GitLab y con Jenkins:
 - [Flujo con GitLab](https://github.com/sfl0r3nz05/SecDelivAutoIoT/blob/master/docs/dise%C3%B1o/2.2%20Arquitectura%20Flujo%20GitOps%20Android%20GitLab.md)
